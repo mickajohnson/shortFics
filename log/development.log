@@ -989,3 +989,86 @@ Processing by GenreController#snippet as HTML
 Completed 200 OK in 69ms (Views: 64.0ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/genres/1/1" for ::1 at 2017-04-01 16:28:21 -0500
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"1", "snippet_id"=>"1"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (0.5ms)[0m  [1m[34mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 61ms (Views: 56.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/genres" for ::1 at 2017-04-01 16:28:24 -0500
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 62ms (Views: 59.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for ::1 at 2017-04-01 16:32:28 -0500
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 74ms (Views: 70.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for ::1 at 2017-04-01 16:33:11 -0500
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 56ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for ::1 at 2017-04-01 16:33:15 -0500
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 55ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for ::1 at 2017-04-01 16:34:28 -0500
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 59ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for ::1 at 2017-04-01 16:36:43 -0500
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 54ms (Views: 52.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for ::1 at 2017-04-01 16:49:17 -0500
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (2.2ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 4023ms (Views: 4021.4ms | ActiveRecord: 0.0ms)
+
+
