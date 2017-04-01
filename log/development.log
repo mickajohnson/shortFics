@@ -989,3 +989,1471 @@ Processing by GenreController#snippet as HTML
 Completed 200 OK in 69ms (Views: 64.0ms | ActiveRecord: 0.8ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (106.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "shortFix_development"[0m
+  [1m[35m (105.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "shortFix_test"[0m
+  [1m[35m (243.4ms)[0m  [1m[35mCREATE DATABASE "shortFix_development" ENCODING = 'unicode'[0m
+  [1m[35m (235.6ms)[0m  [1m[35mCREATE DATABASE "shortFix_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3591003499646488800);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170401045054)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "age" integer, "pref_text_size" integer, "pref_color_inversion" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170401045054"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStories (20170401045149)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "stories" ("id" serial primary key, "author" character varying, "genre" character varying, "title" character varying, "content" text, "snippet" text, "avg_reading_time" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170401045149"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDefaultToUser (20170401045522)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "pref_text_size" TYPE integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "pref_text_size" SET DEFAULT 16[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170401045522"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddInversionDefaultToUser (20170401045918)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "pref_color_inversion" TYPE boolean[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "pref_color_inversion" SET DEFAULT 'f'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170401045918"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGenres (20170401051327)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "genres" ("id" serial primary key, "genre" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170401051327"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeleteGenreFromStory (20170401052029)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "stories" DROP "genre"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170401052029"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddGenreToStory (20170401052146)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "stories" ADD "genre_id" integer[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_stories_on_genre_id" ON "stories"  ("genre_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "stories" ADD CONSTRAINT "fk_rails_29fb4f8e3b"
+FOREIGN KEY ("genre_id")
+  REFERENCES "genres" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170401052146"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-01 21:36:11 UTC], ["updated_at", 2017-04-01 21:36:11 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3591003499646488800)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("genre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["genre", "Literary"], ["created_at", 2017-04-01 21:36:12 UTC], ["updated_at", 2017-04-01 21:36:12 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("genre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["genre", "Speculative"], ["created_at", 2017-04-01 21:36:12 UTC], ["updated_at", 2017-04-01 21:36:12 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("genre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["genre", "Romance"], ["created_at", 2017-04-01 21:36:12 UTC], ["updated_at", 2017-04-01 21:36:12 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "stories" ("author", "title", "content", "snippet", "created_at", "updated_at", "genre_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["author", "Anton Chekhov"], ["title", "The Bet"], ["content", "It was a dark autumn night. The old banker was walking up and down his study and remembering how, fifteen years before, he had given a party one autumn evening. There had been many clever men there, and there had been interesting conversations. Among other things they had talked of capital punishment. The majority of the guests, among whom were many journalists and intellectual men, disapproved of the death penalty. They considered that form of punishment out of date, immoral, and unsuitable for Christian States. In the opinion of some of them the death penalty ought to be replaced everywhere by imprisonment for life.\n“I don’t agree with you,” said their host the banker. “I have not tried either the death penalty or imprisonment for life, but if one may judge a priori, the death penalty is more moral and more humane than imprisonment for life. Capital punishment kills a man at once, but lifelong imprisonment kills him slowly. Which executioner is the more humane, he who kills you in a few minutes or he who drags the life out of you in the course of many years?”\n“Both are equally immoral,” observed one of the guests, “for they both have the same object—to take away life. The State is not God. It has not the right to take away what it cannot restore when it wants to.”\nAmong the guests was a young lawyer, a young man of five-and-twenty. When he was asked his opinion, he said:\n“The death sentence and the life sentence are equally immoral, but if I had to choose between the death penalty and imprisonment for life, I would certainly choose the second. To live anyhow is better than not at all.”\nA lively discussion arose. The banker, who was younger and more nervous in those days, was suddenly carried away by excitement; he struck the table with his fist and shouted at the young man:\n“It’s not true! I’ll bet you two millions you wouldn’t stay in solitary confinement for five years.”\n“If you mean that in earnest,” said the young man, “I’ll take the bet, but I would stay not five but fifteen years.”\n“Fifteen? Done!” cried the banker. “Gentlemen, I stake two millions!”\n“Agreed! You stake your millions and I stake my freedom!” said the young man.\nAnd this wild, senseless bet was carried out! The banker, spoilt and frivolous, with millions beyond his reckoning, was delighted at the bet. At supper he made fun of the young man, and said:\n“Think better of it, young man, while there is still time. To me two millions are a trifle, but you are losing three or four of the best years of your life. I say three or four, because you won’t stay longer. Don’t forget either, you unhappy man, that voluntary confinement is a great deal harder to bear than compulsory. The thought that you have the right to step out in liberty at any moment will poison your whole existence in prison. I am sorry for you.”\nAnd now the banker, walking to and fro, remembered all this, and asked himself: “What was the object of that bet? What is the good of that man’s losing fifteen years of his life and my throwing away two millions? Can it prove that the death penalty is better or worse than imprisonment for life? No, no. It was all nonsensical and meaningless. On my part it was the caprice of a pampered man, and on his part simple greed for money....”\nThen he remembered what followed that evening. It was decided that the young man should spend the years of his captivity under the strictest supervision in one of the lodges in the banker’s garden. It was agreed that for fifteen years he should not be free to cross the threshold of the lodge, to see human beings, to hear the human voice, or to receive letters and newspapers. He was allowed to have a musical instrument and books, and was allowed to write letters, to drink wine, and to smoke. By the terms of the agreement, the only relations he could have with the outer world were by a little window made purposely for that object. He might have anything he wanted—books, music, wine, and so on—in any quantity he desired by writing an order, but could only receive them through the window. The agreement provided for every detail and every trifle that would make his imprisonment strictly solitary, and bound the young man to stay there exactly fifteen years, beginning from twelve o’clock of November 14, 1870, and ending at twelve o’clock of November 14, 1885. The slightest attempt on his part to break the conditions, if only two minutes before the end, released the banker from the obligation to pay him two millions.\nFor the first year of his confinement, as far as one could judge from his brief notes, the prisoner suffered severely from loneliness and depression. The sounds of the piano could be heard continually day and night from his lodge. He refused wine and tobacco. Wine, he wrote, excites the desires, and desires are the worst foes of the prisoner; and besides, nothing could be more dreary than drinking good wine and seeing no one. And tobacco spoilt the air of his room. In the first year the books he sent for were principally of a light character; novels with a complicated love plot, sensational and fantastic stories, and so on.\nIn the second year the piano was silent in the lodge, and the prisoner asked only for the classics. In the fifth year music was audible again, and the prisoner asked for wine. Those who watched him through the window said that all that year he spent doing nothing but eating and drinking and lying on his bed, frequently yawning and angrily talking to himself. He did not read books. Sometimes at night he would sit down to write; he would spend hours writing, and in the morning tear up all that he had written. More than once he could be heard crying.\nIn the second half of the sixth year the prisoner began zealously studying languages, philosophy, and history. He threw himself eagerly into these studies—so much so that the banker had enough to do to get him the books he ordered. In the course of four years some six hundred volumes were procured at his request. It was during this period that the banker received the following letter from his prisoner:\n“My dear Jailer, I write you these lines in six languages. Show them to people who know the languages. Let them read them. If they find not one mistake I implore you to fire a shot in the garden. That shot will show me that my efforts have not been thrown away. The geniuses of all ages and of all lands speak different languages, but the same flame burns in them all. Oh, if you only knew what unearthly happiness my soul feels now from being able to understand them!” The prisoner’s desire was fulfilled. The banker ordered two shots to be fired in the garden.\nThen after the tenth year, the prisoner sat immovably at the table and read nothing but the Gospel. It seemed strange to the banker that a man who in four years had mastered six hundred learned volumes should waste nearly a year over one thin book easy of comprehension. Theology and histories of religion followed the Gospels.\nIn the last two years of his confinement the prisoner read an immense quantity of books quite indiscriminately. At one time he was busy with the natural sciences, then he would ask for Byron or Shakespeare. There were notes in which he demanded at the same time books on chemistry, and a manual of medicine, and a novel, and some treatise on philosophy or theology. His reading suggested a man swimming in the sea among the wreckage of his ship, and trying to save his life by greedily clutching first at one spar and then at another.\n\nII\nThe old banker remembered all this, and thought:\n“To-morrow at twelve o’clock he will regain his freedom. By our agreement I ought to pay him two millions. If I do pay him, it is all over with me: I shall be utterly ruined.”\nFifteen years before, his millions had been beyond his reckoning; now he was afraid to ask himself which were greater, his debts or his assets. Desperate gambling on the Stock Exchange, wild speculation and the excitability which he could not get over even in advancing years, had by degrees led to the decline of his fortune and the proud, fearless, self-confident millionaire had become a banker of middling rank, trembling at every rise and fall in his investments. “Cursed bet!” muttered the old man, clutching his head in despair. “Why didn’t the man die? He is only forty now. He will take my last penny from me, he will marry, will enjoy life, will gamble on the Exchange; while I shall look at him with envy like a beggar, and hear from him every day the same sentence: ‘I am indebted to you for the happiness of my life, let me help you!’ No, it is too much! The one means of being saved from bankruptcy and disgrace is the death of that man!”\nIt struck three o’clock, the banker listened; everyone was asleep in the house and nothing could be heard outside but the rustling of the chilled trees. Trying to make no noise, he took from a fireproof safe the key of the door which had not been opened for fifteen years, put on his overcoat, and went out of the house.\nIt was dark and cold in the garden. Rain was falling. A damp cutting wind was racing about the garden, howling and giving the trees no rest. The banker strained his eyes, but could see neither the earth nor the white statues, nor the lodge, nor the trees. Going to the spot where the lodge stood, he twice called the watchman. No answer followed. Evidently the watchman had sought shelter from the weather, and was now asleep somewhere either in the kitchen or in the greenhouse.\n“If I had the pluck to carry out my intention,” thought the old man, “suspicion would fall first upon the watchman.”\nHe felt in the darkness for the steps and the door, and went into the entry of the lodge. Then he groped his way into a little passage and lighted a match. There was not a soul there. There was a bedstead with no bedding on it, and in the corner there was a dark cast-iron stove. The seals on the door leading to the prisoner’s rooms were intact.\nWhen the match went out the old man, trembling with emotion, peeped through the little window. A candle was burning dimly in the prisoner’s room. He was sitting at the table. Nothing could be seen but his back, the hair on his head, and his hands. Open books were lying on the table, on the two easy-chairs, and on the carpet near the table.\nFive minutes passed and the prisoner did not once stir. Fifteen years’ imprisonment had taught him to sit still. The banker tapped at the window with his finger, and the prisoner made no movement whatever in response. Then the banker cautiously broke the seals off the door and put the key in the keyhole. The rusty lock gave a grating sound and the door creaked. The banker expected to hear at once footsteps and a cry of astonishment, but three minutes passed and it was as quiet as ever in the room. He made up his mind to go in.\nAt the table a man unlike ordinary people was sitting motionless. He was a skeleton with the skin drawn tight over his bones, with long curls like a woman’s and a shaggy beard. His face was yellow with an earthy tint in it, his cheeks were hollow, his back long and narrow, and the hand on which his shaggy head was propped was so thin and delicate that it was dreadful to look at it. His hair was already streaked with silver, and seeing his emaciated, aged-looking face, no one would have believed that he was only forty. He was asleep.... In front of his bowed head there lay on the table a sheet of paper on which there was something written in fine handwriting.\n“Poor creature!” thought the banker, “he is asleep and most likely dreaming of the millions. And I have only to take this half-dead man, throw him on the bed, stifle him a little with the pillow, and the most conscientious expert would find no sign of a violent death. But let us first read what he has written here....”\nThe banker took the page from the table and read as follows:\n“To-morrow at twelve o’clock I regain my freedom and the right to associate with other men, but before I leave this room and see the sunshine, I think it necessary to say a few words to you. With a clear conscience I tell you, as before God, who beholds me, that I despise freedom and life and health, and all that in your books is called the good things of the world.\n“For fifteen years I have been intently studying earthly life. It is true I have not seen the earth nor men, but in your books I have drunk fragrant wine, I have sung songs, I have hunted stags and wild boars in the forests, have loved women.... Beauties as ethereal as clouds, created by the magic of your poets and geniuses, have visited me at night, and have whispered in my ears wonderful tales that have set my brain in a whirl. In your books I have climbed to the peaks of Elburz and Mont Blanc, and from there I have seen the sun rise and have watched it at evening flood the sky, the ocean, and the mountain-tops with gold and crimson. I have watched from there the lightning flashing over my head and cleaving the storm-clouds. I have seen green forests, fields, rivers, lakes, towns. I have heard the singing of the sirens, and the strains of the shepherds’ pipes; I have touched the wings of comely devils who flew down to converse with me of God.... In your books I have flung myself into the bottomless pit, performed miracles, slain, burned towns, preached new religions, conquered whole kingdoms....\n“Your books have given me wisdom. All that the unresting thought of man has created in the ages is compressed into a small compass in my brain. I know that I am wiser than all of you.\n“And I despise your books, I despise wisdom and the blessings of this world. It is all worthless, fleeting, illusory, and deceptive, like a mirage. You may be proud, wise, and fine, but death will wipe you off the face of the earth as though you were no more than mice burrowing under the floor, and your posterity, your history, your immortal geniuses will burn or freeze together with the earthly globe.\n“You have lost your reason and taken the wrong path. You have taken lies for truth, and hideousness for beauty. You would marvel if, owing to strange events of some sorts, frogs and lizards suddenly grew on apple and orange trees instead of fruit, or if roses began to smell like a sweating horse; so I marvel at you who exchange heaven for earth. I don’t want to understand you.\n“To prove to you in action how I despise all that you live by, I renounce the two millions of which I once dreamed as of paradise and which now I despise. To deprive myself of the right to the money I shall go out from here five hours before the time fixed, and so break the compact....”\nWhen the banker had read this he laid the page on the table, kissed the strange man on the head, and went out of the lodge, weeping. At no other time, even when he had lost heavily on the Stock Exchange, had he felt so great a contempt for himself. When he got home he lay on his bed, but his tears and emotion kept him for hours from sleeping.\nNext morning the watchmen ran in with pale faces, and told him they had seen the man who lived in the lodge climb out of the window into the garden, go to the gate, and disappear. The banker went at once with the servants to the lodge and made sure of the flight of his prisoner. To avoid arousing unnecessary talk, he took from the table the writing in which the millions were renounced, and when he got home locked it up in the fireproof safe.\n"], ["snippet", "It was a dark autumn night. The old banker was walking up and down his study and remembering how, fifteen years before, he had given a party one autumn evening. There had been many clever men there, and there had been interesting conversations. Among other things they had talked of capital punishment. The majority of the guests, among whom were many journalists and intellectual men, disapproved of the death penalty. They considered that form of punishment out of date, immoral, and unsuitable for Christian States. In the opinion of some of them the death penalty ought to be replaced everywhere by imprisonment for life.\n“I don’t agree with you,” said their host the banker. “I have not tried either the death penalty or imprisonment for life, but if one may judge a priori, the death penalty is more moral and more humane than imprisonment for life. Capital punishment kills a man at once, but lifelong imprisonment kills him slowly. Which executioner is the more humane, he who kills you in a few minutes or he who drags the life out of you in the course of many years?”\n“Both are equally immoral,” observed one of the guests, “for they both have the same object—to take away life. The State is not God. It has not the right to take away what it cannot restore when it wants to.”\nAmong the guests was a young lawyer, a young man of five-and-twenty."], ["created_at", 2017-04-01 21:36:12 UTC], ["updated_at", 2017-04-01 21:36:12 UTC], ["genre_id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "stories" ("author", "title", "content", "snippet", "created_at", "updated_at", "genre_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["author", "James Joyce"], ["title", "Eveline"], ["content", "She sat at the window watching the evening invade the avenue. Her head was leaned against the window curtains and in her nostrils was the odour of dusty cretonne. She was tired.\n\nFew people passed. The man out of the last house passed on his way home; she heard his footsteps clacking along the concrete pavement and afterwards crunching on the cinder path before the new red houses. One time there used to be a field there in which they used to play every evening with other people’s children. Then a man from Belfast bought the field and built houses in it—not like their little brown houses but bright brick houses with shining roofs. The children of the avenue used to play together in that field—the Devines, the Waters, the Dunns, little Keogh the cripple, she and her brothers and sisters. Ernest, however, never played: he was too grown up. Her father used often to hunt them in out of the field with his blackthorn stick; but usually little Keogh used to keep nix and call out when he saw her father coming. Still they seemed to have been rather happy then. Her father was not so bad then; and besides, her mother was alive. That was a long time ago; she and her brothers and sisters were all grown up; her mother was dead. Tizzie Dunn was dead, too, and the Waters had gone back to England. Everything changes. Now she was going to go away like the others, to leave her home.\n\nHome! She looked round the room, reviewing all its familiar objects which she had dusted once a week for so many years, wondering where on earth all the dust came from. Perhaps she would never see again those familiar objects from which she had never dreamed of being divided. And yet during all those years she had never found out the name of the priest whose yellowing photograph hung on the wall above the broken harmonium beside the coloured print of the promises made to Blessed Margaret Mary Alacoque. He had been a school friend of her father. Whenever he showed the photograph to a visitor her father used to pass it with a casual word:\n\n“He is in Melbourne now.”\n\nShe had consented to go away, to leave her home. Was that wise? She tried to weigh each side of the question. In her home anyway she had shelter and food; she had those whom she had known all her life about her. Of course she had to work hard, both in the house and at business. What would they say of her in the Stores when they found out that she had run away with a fellow? Say she was a fool, perhaps; and her place would be filled up by advertisement. Miss Gavan would be glad. She had always had an edge on her, especially whenever there were people listening.\n\n“Miss Hill, don’t you see these ladies are waiting?”\n\n“Look lively, Miss Hill, please.”\n\nShe would not cry many tears at leaving the Stores.\n\nBut in her new home, in a distant unknown country, it would not be like that. Then she would be married—she, Eveline. People would treat her with respect then. She would not be treated as her mother had been. Even now, though she was over nineteen, she sometimes felt herself in danger of her father’s violence. She knew it was that that had given her the palpitations. When they were growing up he had never gone for her like he used to go for Harry and Ernest, because she was a girl; but latterly he had begun to threaten her and say what he would do to her only for her dead mother’s sake. And now she had nobody to protect her. Ernest was dead and Harry, who was in the church decorating business, was nearly always down somewhere in the country. Besides, the invariable squabble for money on Saturday nights had begun to weary her unspeakably. She always gave her entire wages—seven shillings—and Harry always sent up what he could but the trouble was to get any money from her father. He said she used to squander the money, that she had no head, that he wasn’t going to give her his hard-earned money to throw about the streets, and much more, for he was usually fairly bad of a Saturday night. In the end he would give her the money and ask her had she any intention of buying Sunday’s dinner. Then she had to rush out as quickly as she could and do her marketing, holding her black leather purse tightly in her hand as she elbowed her way through the crowds and returning home late under her load of provisions. She had hard work to keep the house together and to see that the two young children who had been left to her charge went to school regularly and got their meals regularly. It was hard work—a hard life—but now that she was about to leave it she did not find it a wholly undesirable life.\n\nShe was about to explore another life with Frank. Frank was very kind, manly, open-hearted. She was to go away with him by the night-boat to be his wife and to live with him in Buenos Ayres where he had a home waiting for her. How well she remembered the first time she had seen him; he was lodging in a house on the main road where she used to visit. It seemed a few weeks ago. He was standing at the gate, his peaked cap pushed back on his head and his hair tumbled forward over a face of bronze. Then they had come to know each other. He used to meet her outside the Stores every evening and see her home. He took her to see The Bohemian Girl and she felt elated as she sat in an unaccustomed part of the theatre with him. He was awfully fond of music and sang a little. People knew that they were courting and, when he sang about the lass that loves a sailor, she always felt pleasantly confused. He used to call her Poppens out of fun. First of all it had been an excitement for her to have a fellow and then she had begun to like him. He had tales of distant countries. He had started as a deck boy at a pound a month on a ship of the Allan Line going out to Canada. He told her the names of the ships he had been on and the names of the different services. He had sailed through the Straits of Magellan and he told her stories of the terrible Patagonians. He had fallen on his feet in Buenos Ayres, he said, and had come over to the old country just for a holiday. Of course, her father had found out the affair and had forbidden her to have anything to say to him.\n\n“I know these sailor chaps,” he said.\n\nOne day he had quarrelled with Frank and after that she had to meet her lover secretly.\n\nThe evening deepened in the avenue. The white of two letters in her lap grew indistinct. One was to Harry; the other was to her father. Ernest had been her favourite but she liked Harry too. Her father was becoming old lately, she noticed; he would miss her. Sometimes he could be very nice. Not long before, when she had been laid up for a day, he had read her out a ghost story and made toast for her at the fire. Another day, when their mother was alive, they had all gone for a picnic to the Hill of Howth. She remembered her father putting on her mother’s bonnet to make the children laugh.\n\nHer time was running out but she continued to sit by the window, leaning her head against the window curtain, inhaling the odour of dusty cretonne. Down far in the avenue she could hear a street organ playing. She knew the air. Strange that it should come that very night to remind her of the promise to her mother, her promise to keep the home together as long as she could. She remembered the last night of her mother’s illness; she was again in the close dark room at the other side of the hall and outside she heard a melancholy air of Italy. The organ-player had been ordered to go away and given sixpence. She remembered her father strutting back into the sickroom saying:\n\n“Damned Italians! coming over here!”\n\nAs she mused the pitiful vision of her mother’s life laid its spell on the very quick of her being—that life of commonplace sacrifices closing in final craziness. She trembled as she heard again her mother’s voice saying constantly with foolish insistence:\n\n“Derevaun Seraun! Derevaun Seraun!”\n\nShe stood up in a sudden impulse of terror. Escape! She must escape! Frank would save her. He would give her life, perhaps love, too. But she wanted to live. Why should she be unhappy? She had a right to happiness. Frank would take her in his arms, fold her in his arms. He would save her.\n\n\n\nShe stood among the swaying crowd in the station at the North Wall. He held her hand and she knew that he was speaking to her, saying something about the passage over and over again. The station was full of soldiers with brown baggages. Through the wide doors of the sheds she caught a glimpse of the black mass of the boat, lying in beside the quay wall, with illumined portholes. She answered nothing. She felt her cheek pale and cold and, out of a maze of distress, she prayed to God to direct her, to show her what was her duty. The boat blew a long mournful whistle into the mist. If she went, tomorrow she would be on the sea with Frank, steaming towards Buenos Ayres. Their passage had been booked. Could she still draw back after all he had done for her? Her distress awoke a nausea in her body and she kept moving her lips in silent fervent prayer.\n\nA bell clanged upon her heart. She felt him seize her hand:\n\n“Come!”\n\nAll the seas of the world tumbled about her heart. He was drawing her into them: he would drown her. She gripped with both hands at the iron railing.\n\n“Come!”\n\nNo! No! No! It was impossible. Her hands clutched the iron in frenzy. Amid the seas she sent a cry of anguish!\n\n“Eveline! Evvy!”\n\nHe rushed beyond the barrier and called to her to follow. He was shouted at to go on but he still called to her. She set her white face to him, passive, like a helpless animal. Her eyes gave him no sign of love or farewell or recognition."], ["snippet", "She sat at the window watching the evening invade the avenue. Her head was leaned against the window curtains and in her nostrils was the odour of dusty cretonne. She was tired.\n\nFew people passed. The man out of the last house passed on his way home; she heard his footsteps clacking along the concrete pavement and afterwards crunching on the cinder path before the new red houses. One time there used to be a field there in which they used to play every evening with other people’s children."], ["created_at", 2017-04-01 21:36:12 UTC], ["updated_at", 2017-04-01 21:36:12 UTC], ["genre_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "stories" ("author", "title", "content", "snippet", "created_at", "updated_at", "genre_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["author", "John Walker"], ["title", "Treks End"], ["content", "I saw it happen. I witnessed the end of the world. And since I'm the only human who saw it, I'm going to write it down, even though there won't be any more generations of humans to read it. Somehow I need to. Perhaps another species will learn from our experience. Probably not. Certainly we never imagined how dangerous a galaxy we grew up in.\n\nContext: even though born decades after Cernan made the last bootprint on the Moon, I've dreamed of going into space for as long as I can remember. I'd lie in bed at night and imagine my bedroom suddenly transformed into zero G. I'd push myself off from a wall, feeling the exquisite back-pressure of pure inertia as I squeezed my fingers to launch myself; I'd do lazy back flips and twists in mid-air, then use my toes to spring from the opposite wall. I occupied myself with all the usual space-kid stuff: model rockets, reading astronaut memoirs, even joining one of the groups lobbying for more taxpayer money for socialist space programs. But even in high school I'd faced the fact that the only way I'd ever make it to orbit would be to turn myself into a politically-correct government funded parasite, then spend a career in a program completely decoupled from the true human destiny in space. No thanks; I'd rather program computers.\n\nThen came the Fourth of August: decapitation. Amid the shock and chaos that ensued, only a few (far wiser than this high school kid) imagined that the destruction of Washington would indirectly open the road to the stars. Like so many of the private initiatives that sprang up in the years of recovery and the dawn of the Republic, the Band of Billionaires and the GEOSPACE corporation they founded would invigorate industries grown sclerotic from decades of regulation and inspire a generation to realise their dreams, working toward their own personal future beyond the home planet.\n\nIt sure was that way for me. In my junior year of college, I changed my major to aerospace, and started to catch up on thermogoddamics, fluids, and all the real engineering I'd ignored while fooling around with computers. It would take me an extra year to graduate, but equip me for a career in space.\n\nAfter the obligatory master's degree, flight school indenture, National Service as a militia pilot, and five years of working up the ladder at GEOSPACE, I'd made it off-planet as an interorbital ferry pilot (the word “shuttle” having become as disreputable as “appeasement” and “root cause”), driving technicians and gear back and forth between the Low Earth Orbit logistics base and the GEOCans. After economics finally prevailed over national pride, it was obvious that sprinkling dozens of satellites around geosynchronous orbit was an insane way to go about global communication. Far wiser to concentrate everything in a small number of geostationary platforms (visionaries always fastened on the minimum of three, but actually six ultimately made the most sense), cross-linked by high bandwidth lasers. On each GEOCan (supposedly from “GEOSPACE Communication Array Node”, but really because the pressurised module resembled a beer can), tenants shared solar panels, transmitters and phased array antennas, but supplied their own switching, signal processing, and beam directing gear. The six GEOCans were hardly high tech, but then nothing GEOSPACE did was, really. But they made money—cubic acres of the stuff. The GEOCans were actually based on the design of the laboratory modules for the grotesque “International Space Station” that scattered debris all over China two years after the decapitation. Once the GEOSPACE engineers ripped out all the gold-plating and safetyland silliness, what remained was a suitable pressure vessel and logistics system for the GEOCans.\n\nThis was my third trip to a GEOCan as pilot—this time GEOCan Asia, above Singapore at 105 degrees East; what a view! We'd embarked three tonnes of cargo and five technicians at the GEOSPACE LEO base for the run uphill. Like most logistics missions, we'd top up station keeping fuel, but most of our cargo was changeouts for gear in the racks inside the GEOCan—signal processors, amplifiers, and so forth. The techs understand this stuff (or at least how to hook it up); I just drive the bus. After docking, completing the propellant transfer, hooking up the life support system in the GEOCan to the consumables and scrubbers in the ferry, and checking the atmosphere in the GEOCan, my work was done until it was time to undock and burn Earth transfer orbit. The techs were busy in the GEOCan removing old gear and installing the new, muttering to themselves in Russian, Chinese, Korean, Japanese, and English, and bitching to one another in the latter. I was floating in my ferry pilot's seat, listening to the chatter on the intercom, but mostly alternating between studying and looking out the window.\n\nStudying—my next career goal (it seems so trivial, now) was to land a first officer's seat on a GEOSPACE Trans-Atmospheric Transport, then move up after a couple of years to captain. Flying back and forth from Omaha spaceport to low Earth orbit may not seem as romantic as boosting up to where the Earth looks the size of a soccer ball, but it pays a lot better, plus you get to sleep in your own bed every night and shower regularly. With the majority of TAT flights already going to the first GEOSPACE Orbital Hotel (dubbed “Sin Star” by the fundies—beats me what so disturbs them about zero-G volleyball), and the tourist sector growing rapidly as volume drove the costs down, that's where the money was. Besides, with luck and enough seniority in the left seat of a TAT, I'd be in line to command a lunar ferry once GEOSPACE started to open the Moon to tourism.\n\nNow, GEOSPACE could possibly afford to lose a ferry with a bunch of techs and some comm gear. The insurance would cover it and, Hell, we all fought to get our jobs. But losing a TAT with 70 tourists returning from holiday would in all likelihood sink not only the space tourism business but GEOSPACE as well. To be entrusted with one of those vehicles you had to be the very best of the very best.\n\nWhich I was, of course. All I had to do was prove it.\n\nSo, there I was, reviewing the TAT systems manual for the thousandth time in preparation for my first “informal” interview with the chief of the TAT crew office next month. I can hand fly anything with better L/D than a watermelon, but there's only so much a meat computer can absorb in a given amount of time from prose like, “If the primary yaw RCS fails and the prime FCS fails over to the backup yaw RCS and the RCS anomaly annunciator fails to indicate the fault, the master caution and warning system will indicate status 5104, which may be queried on the primary or backup flight display system. But if the backup FCS is active, no indication of the failure of primary yaw RCS will be given if the RCS anomaly annunciator has also failed.” Imagine seventeen thousand pages of this, and eventually being tested on all of it in the simulator.\n\nMine eyes, having thoroughly glazed over, gazed upward from the screen toward the ever-fascinating Earth almost centred in the cockpit window. Suddenly, what is that? An impossibly brilliant star came into view from the right, moving toward the Earth with an angular velocity you simply never see in space. It may have been bigger than a point source, but I don't think so. It took no more than a second to cross the two Earth diameters from where I first spotted it to the point of impact not far from the illuminated limb, a bit north of the equator.\n\nAll Hell broke loose. The impact instantaneously ejected a plume of plasma, which began to rise outward at a speed much slower than the impactor arrived. I'm not sure about my perception of time from here on. There was no camera to record it, and when you're seeing something you've never, ever, expected to see, time gets elastic. I remember my parents talking about feeling that way when “the twin towers fell.” I'm too young to remember that.\n\nWhatever the timing, this is what happened. The Earth seemed to shudder, then the ocean began to blow off into a steam cloud which visibly inflated the atmosphere and turned it white as it progressed along a spherical front from the point of impact. Then the Earth, which now seemed puckered near the impact point on the right limb where the plasma was dispersing into space, belched out a spout of incandescent magma from behind the dark left limb. The spout may have gone into orbit; there may be a new Moon. Too bad there won't be any lovers to see it. The white wave continued to spread around the globe as the shock wave progressed and the oceans vaporised. It moved slower than one might expect, but advanced at an absolutely constant rate: the curtain of extinction ringing down upon the biosphere. Then a shudder happened about 270 degrees from the point of impact and a white band began to propagate outward in both directions from there. When all of these converged behind the dark limb something happened which looked like a secondary ejecta event, but I'm not sure about that.\n\nMoments after the impact I keyed the intercom to the techs in the GEOCan. “Folks, something's happened. Get up here right away.” I wasn't trying to demonstrate sang-froid—I'm a pilot with more than 3000 hours and that's how I talk. One by one, they floated onto the flight deck and looked out the window. All of us were struck silent by what we were witnessing. We'd lost the feeds from everything on Earth within 20 seconds of the impact. The cross-feeds from the other GEOCans were still up but nothing but carrier. By the time anybody spoke, Earth was a featureless white ball with ejecta coalescing into an arc around it.\n\nI described the arrival of the impactor and the events before they'd arrived on the flight deck. Vasily shook his head and said, “We've known this risk since Tunguska, and what have we done—nothing. We go to space so monkeys can chatter at one another.” Yutaka disagreed, “This was not an impact by a solar system body.” He turned to me. “Peter, how long did you say it took for the impactor to come in from the point where you spotted it?” “About a second to cross two Earth diameters”, I replied.\n\nYutaka drew his computer from its holster and tapped away for a few seconds. He paused, shook his head, tapped some more, then said slowly, “Whatever it was, it came in at about ten percent of the speed of light. Dynamically, that object didn't belong to the solar system, or for that matter the galaxy. It was going…”, tap, tap, tap, “more than seven hundred times too fast to be gravitationally bound to the Sun, and sixty times the escape velocity of the galaxy.”\n\n“So what was it?”, asked Jiang. I pondered the question. “Well, there are really only two possibilities”, I said. “An impactor's first acquiring relativistic velocity by successive random gravitational encounters, then managing to hit a target the size of the Earth is something so fantastically improbable it's unlikely to have happened anywhere in the universe since the big bang. So if that's what happened, we have just witnessed the single worst case of bad luck since Creation.” “Other possibility?”, asked Vasily.\n\n“That we've just witnessed the deliberate destruction of the Earth by hostile aliens.”\n\nWe talked about these issues for several hours and then, having nothing more to say and nothing to look at besides the white ball our home planet had become, one by one we went to sleep. Maybe you find it hard to imagine going to sleep after watching the destruction of your entire species, but eventually you get tired enough and sleep overtakes you. It's not like we expected a wake-up call next morning.\n\nThe next day we monitored and tried calling on all frequencies the GEOCan could access. The GPS constellation remained on the air, but the ephemeris in the satellites showed no update since the impact. The other GEOCans maintained their laser links with ours, but all indicated no uplink from Earth or LEO and our transmissions relayed through them elicited no reply. We were the only crew above LEO at the time of the impact. The clearly visible expansion of the atmosphere as the oceans flashed into steam had been more than enough to bring down any satellite in LEO, including the logistics base, Hotel, and any TATs en route. We had supplies for 12 days at GEO even though we'd only expected to stay for three. With nothing better to do, we spent most of the day in rather maudlin recollections of Earth. Our crew, all young, male, and apart from Jiang, single, probably took the end of human history better than most might have, but there'd be no way to repeat the experiment with other humans. We were it.\n\nThree days passed. We did routine housekeeping, scanned Earth and the other GEOCans for signals, finding nothing. We took pictures of the coalescence of the ejecta from the impact into a ring which now seemed to be punctuated by the core of an inner moon. There was nothing else to do. All of us were mission-oriented people, so we did our jobs. It seems crazy, but what was the alternative? I mean, otherwise, we might be fired.\n\nAround mid-day, four days after the impact, the ship arrived.\n\nYutaka, Jiang, and I were on the flight deck when it appeared like a streak of light and seemed to instantaneously stop twenty metres in front of the ferry. It was huge, about 100 metres in diameter, perfectly spherical. The surface was primarily white, but with sub-structure that appeared fractal and seemed to constantly change. A tube extended from the craft toward our front docking port, where it engaged the drogue and triggered the contingency rescue hard dock. Over the intercom we heard, “Please open the hatch; we need to talk to you.” This in midwestern American English.\n\nWhen I cracked the hatch, there was no residual pressure differential, but the smell could knock you down. They floated through the hatch, one after another, five in all. If you're big on diversity, these are your kind of aliens. Two almost resembled greys out of a Whitley Streiber nightmare—dinky, big almond-shaped black eyes, gracile limbs, egg-shaped heads…but leathery ears, like a fox bat. Two more were vaguely lizard-like, but not all that creepy. They stood erect on two stumpy legs and had no obvious tail. Then there was the one with the tentacles on his (her, its?) face which smelled like…well, I've never smelled anything like that before…brrrr. They all seemed to have no difficulty breathing our atmosphere and if we smelled as bad to them, they gave no sign of it.\n\nThey seemed to have a strong sense of hierarchy. After speaking briefly to each member of the crew, each in his own mother tongue (colloquially, and without obvious accent), one of the greys approached and addressed me as “captain”. I denied the rank, but the grey insisted, “Based on our study of your species, one speaks for all on your ships.” With assent from the techs, I accepted that responsibility.\n\nIn bad situations, I like to get out in front of things, and this was about as bad a situation as I could imagine. I put my hands on my hips and asked the grey who stood before me, “Was it you who destroyed our world?”\n\n“It was.”\n\n“Why?”\n\nThe grey replied, “Because your planet presented an unprecedented risk to peace in the galaxy.”\n\nI paused, held my breath for a few seconds, then said, as calmly as I could manage, “Unprecedented risk? You have interstellar travel; you destroy entire planets with relativistic bullets, and you have no apparent compunctions about planetary ecocide. And you call us a risk?”\n\nThe grey raised its head and fixed me with its huge black eyes. They're not hypnotic—just black—nothing there at all, not even a reflection. It said, “We monitor electromagnetic emissions of all planets crossing the technological threshold. Never before have we found one which represents such a grave peril. Your species posed a threat so immediate, so acute, that not to act would have been negligent. We are not aggressors; we are galactic peacekeepers. We do not interfere with the development of any civilisation unless it threatens all of us who have renounced warfare.\n\n“Your United Federation of Planets, with its incessant conflict and meddling with other developing civilisations in direct violation of its own Prime Directive and our Fundamental Charter presented a clear and present danger to us. With warp drive, which we do not possess, and cloaking and subspace communications which enabled your Federation vessels and facilities to elude our sensors, we had no alternative but to act preemptively and decisively in self defence. We could not risk a conflict with your Federation.”\n\nVasily was the most enthusiastic Trekker on board. He flashed crimson, then shouted,\n\n“But there is no Federation, no warp, no cloaking, no subspace. That's nothing but science fiction.”\n\nThe aliens looked at one other and exchanged some words in a language none of us understood. Then the grey turned back to me and spoke.\n\n“We know science. What is fiction?”"], ["snippet", "I saw it happen. I witnessed the end of the world. And since I'm the only human who saw it, I'm going to write it down, even though there won't be any more generations of humans to read it. Somehow I need to. Perhaps another species will learn from our experience. Probably not. Certainly we never imagined how dangerous a galaxy we grew up in."], ["created_at", 2017-04-01 21:36:12 UTC], ["updated_at", 2017-04-01 21:36:12 UTC], ["genre_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 21:36:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (5.2ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 9983ms (Views: 9956.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/1" for 10.0.2.2 at 2017-04-01 21:37:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"1"}
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 1)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 924ms (Views: 724.4ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/genres/1" for 10.0.2.2 at 2017-04-01 21:37:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"1"}
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (1.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 1)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 439ms (Views: 385.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/genres/1" for 10.0.2.2 at 2017-04-01 21:37:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"1"}
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (0.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 1)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.1ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 476ms (Views: 407.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/genres/1/stories/1" for 10.0.2.2 at 2017-04-01 21:37:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#show as HTML
+  Parameters: {"genre_id"=>"1", "story_id"=>"1"}
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (5.3ms)[0m  [1m[34mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering story/show.html.erb within layouts/application
+  Rendered story/show.html.erb within layouts/application (1.1ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 459ms (Views: 406.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/genres/1" for 10.0.2.2 at 2017-04-01 21:37:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"1"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (1.0ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 1)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.2ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_flash.html.erb (1.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 527ms (Views: 495.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 21:37:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (1.9ms)
+  Rendered shared/_flash.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 563ms (Views: 502.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/new" for 10.0.2.2 at 2017-04-01 21:48:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"new"}
+Redirected to http://localhost:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-04-01 21:48:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.1ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 269ms (Views: 257.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stories/new" for 10.0.2.2 at 2017-04-01 21:48:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#new as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-04-01 21:48:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 361ms (Views: 340.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2017-04-01 21:48:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"eZmcQnkHiI7hQFzmkNpgu2PvZmDsI+OXkiOKBvg4kTZz6466scEPlInK+VT+Wv4Fooe1wHcvVbMGwNzldM+EHg==", "name"=>"Mick"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mick"], ["created_at", 2017-04-01 21:48:52 UTC], ["updated_at", 2017-04-01 21:48:52 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/genres
+Completed 302 Found in 31ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 21:48:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-04-01 21:48:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 289ms (Views: 274.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-04-01 21:49:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (3.9ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 1246ms (Views: 1208.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2017-04-01 21:49:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"HgMEbsD+glyS0c7FWPJZy2adeRtfbuT4v3+qbhsw7Q0UcRaWCDgFRvpba3c2csd1p/Wqu8RiUtwrnPyNl8f4JQ==", "name"=>"Mick"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mick"], ["created_at", 2017-04-01 21:49:23 UTC], ["updated_at", 2017-04-01 21:49:23 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/genres
+Completed 302 Found in 50ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 21:49:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 285ms (Views: 271.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/1" for 10.0.2.2 at 2017-04-01 21:49:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"1"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 1)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 512ms (Views: 352.2ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/stories/new" for 10.0.2.2 at 2017-04-01 21:49:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#new as HTML
+  Rendering story/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered story/new.html.erb within layouts/application (2.5ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 331ms (Views: 318.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/stories" for 10.0.2.2 at 2017-04-01 21:51:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#create as HTML
+  Parameters: {"authenticity_token"=>"2tQO8xMDlSWRBb98EKwQBOu/vHpOUbtTV/ydM/wM6lLQphwL28USP/mPGs5+LI66Ktdv2tVdDXfDH8vQcPv/eg==", "title"=>"A Little Journey", "genre"=>"2", "author"=>"Ray Bradbury", "snippet"=>"There were two important things—one, that she was very old; two, that Mr. Thirkell was taking her to God. For hadn't he patted her hand and said: \"Mrs. Bellowes, we'll take off into space in my rocket, and go to find Him together.\"\r\nAnd that was how it was going to be. Oh, this wasn't like any other group Mrs. Bellowes had ever joined. In her fervor to light a path for her delicate, tottering feet, she had struck matches down dark alleys, and found her way to Hindu mystics who floated their flickering, starry eyelashes over crystal balls.", "content"=>"There were two important things—one, that she was very old; two, that Mr. Thirkell was taking her to God. For hadn't he patted her hand and said: \"Mrs. Bellowes, we'll take off into space in my rocket, and go to find Him together.\"\r\nAnd that was how it was going to be. Oh, this wasn't like any other group Mrs. Bellowes had ever joined. In her fervor to light a path for her delicate, tottering feet, she had struck matches down dark alleys, and found her way to Hindu mystics who floated their flickering, starry eyelashes over crystal balls. She had walked on the meadow paths with ascetic Indian philosophers imported by daughters-in-spirit of Madame Blavatsky. She had made pilgrimages to California's stucco jungles to hunt the astrological seer in his natural habitat. She had even consented to signing away the rights to one of her homes in order to be taken into the shouting order of a temple of amazing evangelists who had promised her golden smoke, crystal fire, and the great soft hand of God coming to bear her home.\r\n\r\nNone of these people had ever shaken Mrs. Bellowes' faith, even when she saw them sirened away in a black wagon in the night, or discovered their pictures, bleak and unromantic, in the morning tabloids. The world had roughed them up and locked them away because they knew too much, that was all.\r\nAnd then, two weeks ago, she had seen Mr. Thirkell's advertisement in New York City:\r\nCOME TO MARS!\r\n\r\nStay at the Thirkell Restorium for one week. And then,\r\non into space on the greatest adventure life can offer!\r\n\r\nSend for Free Pamphlet: \"Nearer My God To Thee.\"\r\n\r\nExcursion rates. Round trip slightly lower.\r\n\r\n\"Round trip,\" Mrs. Bellowes had thought. \"But who would come back after seeing Him?\"\r\nAnd so she had bought a ticket and flown off to Mars and spent seven mild days at Mr. Thirkell's Restorium, the building with the sign on it which flashed: THIRKELL'S ROCKET TO HEAVEN! She had spent the week bathing in limpid waters and erasing the care from her tiny bones, and now she was fidgeting, ready to be loaded into Mr. Thirkell's own special private rocket, like a bullet, to be fired on out into space beyond Jupiter and Saturn and Pluto. And thus—who could deny it?—you would be getting nearer and nearer to the Lord. How wonderful! Couldn't you just feel Him drawing near? Couldn't you just sense His breath, His scrutiny, His Presence?\r\n\"Here I am,\" said Mrs. Bellowes, \"an ancient rickety elevator, ready to go up the shaft. God need only press the button.\"\r\nNow, on the seventh day, as she minced up the steps of the Restorium, a number of small doubts assailed her.\r\n\"For one thing,\" she said aloud to no one, \"it isn't quite the land of milk and honey here on Mars that they said it would be. My room is like a cell, the swimming pool is really quite inadequate, and, besides, how many widows who look like mushrooms or skeletons want to swim? And, finally, the whole Restorium smells of boiled cabbage and tennis shoes!\"\r\nShe opened the front door and let it slam, somewhat irritably.\r\nShe was amazed at the other women in the auditorium. It was like wandering in a carnival mirror-maze, coming again and again upon yourself—the same floury face, the same chicken hands, and jingling bracelets. One after another of the images of herself floated before her. She put out her hand, but it wasn't a mirror; it was another lady shaking her fingers and saying:\r\n\"We're waiting for Mr. Thirkell. Sh!\"\r\n\"Ah,\" whispered everyone.\r\nThe velvet curtains parted.\r\nMr. Thirkell appeared, fantastically serene, his Egyptian eyes upon everyone. But there was something, nevertheless, in his appearance which made one expect him to call \"Hi!\" while fuzzy dogs jumped over his legs, through his hooped arms, and over his back. Then, dogs and all, he should dance with a dazzling piano-keyboard smile off into the wings.\r\nMrs. Bellowes, with a secret part of her mind which she constantly had to grip tightly, expected to hear a cheap Chinese gong sound when Mr. Thirkell entered. His large liquid dark eyes were so improbable that one of the old ladies had facetiously claimed she saw a mosquito cloud hovering over them as they did around summer rain-barrels. And Mrs. Bellowes sometimes caught the scent of the theatrical mothball and the smell of calliope steam on his sharply pressed suit.\r\nBut with the same savage rationalization that had greeted all other disappointments in her rickety life, she bit at the suspicion and whispered, \"This time it's real. This time it'll work. Haven't we got a rocket?\"\r\nMr. Thirkell bowed. He smiled a sudden Comedy Mask smile. The old ladies looked in at his epiglottis and sensed chaos there.\r\nBefore he even began to speak, Mrs. Bellowes saw him picking up each of his words, oiling it, making sure it ran smooth on its rails. Her heart squeezed in like a tiny fist, and she gritted her porcelain teeth.\r\n\"Friends,\" said Mr. Thirkell, and you could hear the frost snap in the hearts of the entire assemblage.\r\n\"No!\" said Mrs. Bellowes ahead of time. She could hear the bad news rushing at her, and herself tied to the track while the immense black wheels threatened and the whistle screamed, helpless.\r\n\"There will be a slight delay,\" said Mr. Thirkell.\r\nIn the next instant, Mr. Thirkell might have cried, or been tempted to cry, \"Ladies, be seated!\" in minstrel-fashion, for the ladies had come up at him from their chairs, protesting and trembling.\r\n\"Not a very long delay.\" Mr. Thirkell put up his hands to pat the air.\r\n\"How long?\"\r\n\"Only a week.\"\r\n\"A week!\"\r\n\"Yes. You can stay here at the Restorium for seven more days, can't you? A little delay won't matter, will it, in the end? You've waited a lifetime. Only a few more days.\"\r\nAt twenty dollars a day, thought Mrs. Bellowes, coldly.\r\n\"What's the trouble?\" a woman cried.\r\n\"A legal difficulty,\" said Mr. Thirkell.\r\n\"We've a rocket, haven't we?\"\r\n\"Well, ye-ess.\"\r\n\"But I've been here a whole month, waiting,\" said one old lady. \"Delays, delays!\"\r\n\"That's right,\" said everyone.\r\n\"Ladies, ladies,\" murmured Mr. Thirkell, smiling serenely.\r\n\"We want to see the rocket!\" It was Mrs. Bellowes forging ahead, alone, brandishing her fist like a toy hammer.\r\nMr. Thirkell looked into the old ladies' eyes, a missionary among albino cannibals.\r\n\"Well, now,\" he said.\r\n\"Yes, now!\" cried Mrs. Bellowes.\r\n\"I'm afraid—\" he began.\r\n\"So am I!\" she said. \"That's why we want to see the ship!\"\r\n\"No, no, now, Mrs.—\" He snapped his fingers for her name.\r\n\"Bellowes!\" she cried. She was a small container, but now all the seething pressures that had been built up over long years came steaming through the delicate vents of her body. Her cheeks became incandescent. With a wail that was like a melancholy factory whistle, Mrs. Bellowes ran forward and hung to him, almost by her teeth, like a summer-maddened Spitz. She would not and never could let go, until he died, and the other women followed, jumping and yapping like a pound let loose on its trainer, the same one who had petted them and to whom they had squirmed and whined joyfully an hour before, now milling about him, creasing his sleeves and frightening the Egyptian serenity from his gaze.\r\n\"This way!\" cried Mrs. Bellowes, feeling like Madame Lafarge. \"Through the back! We've waited long enough to see the ship. Every day he's put us off, every day we've waited, now let's see.\"\r\n\"No, no, ladies!\" cried Mr. Thirkell, leaping about.\r\nThey burst through the back of the stage and out a door, like a flood, bearing the poor man with them into a shed, and then out, quite suddenly, into an abandoned gymnasium.\r\n\"There it is!\" said someone. \"The rocket.\"\r\nAnd then a silence fell that was terrible to entertain.\r\nThere was the rocket.\r\nMrs. Bellowes looked at it and her hands sagged away from Mr. Thirkell's collar.\r\nThe rocket was something like a battered copper pot. There were a thousand bulges and rents and rusty pipes and dirty vents on and in it. The ports were clouded over with dust, resembling the eyes of a blind hog.\r\nEveryone wailed a little sighing wail.\r\n\"Is that the rocket ship Glory Be to the Highest?\" cried Mrs. Bellowes, appalled.\r\nMr. Thirkell nodded and looked at his feet.\r\n\"For which we paid out our one thousand dollars apiece and came all the way to Mars to get on board with you and go off to find Him?\" asked Mrs. Bellowes.\r\n\"Why, that isn't worth a sack of dried peas,\" said Mrs. Bellowes.\r\n\"It's nothing but junk!\"\r\nJunk, whispered everyone, getting hysterical.\r\n\"Don't let him get away!\"\r\nMr. Thirkell tried to break and run, but a thousand possum traps closed on him from every side. He withered.\r\nEverybody walked around in circles like blind mice. There was a confusion and a weeping that lasted for five minutes as they went over and touched the Rocket, the Dented Kettle, the Rusty Container for God's Children.\r\n\"Well,\" said Mrs. Bellowes. She stepped up into the askew doorway of the rocket and faced everyone. \"It looks as if a terrible thing has been done to us,\" she said. \"I haven't any money to go back home to Earth and I've too much pride to go to the Government and tell them a common man like this has fooled us out of our life's savings. I don't know how you feel about it, all of you, but the reason all of us came is because I'm eighty-five, and you're eighty-nine, and you're seventy-eight, and all of us are nudging on toward a hundred, and there's nothing on Earth for us, and it doesn't appear there's anything on Mars either. We all expected not to breathe much more air or crochet many more doilies or we'd never have come here. So what I have to propose is a simple thing—to take a chance.\"\r\nShe reached out and touched the rusted hulk of the rocket.\r\n\"This is our rocket. We paid for our trip. And we're going to take our trip!\"\r\nEveryone rustled and stood on tiptoes and opened an astonished mouth.\r\nMr. Thirkell began to cry. He did it quite easily and very effectively.\r\n\"We're going to get in this ship,\" said Mrs. Bellowes, ignoring him. \"And we're going to take off to where we were going.\"\r\nMr. Thirkell stopped crying long enough to say, \"But it was all a fake. I don't know anything about space. He's not out there, anyway. I lied. I don't know where He is, and I couldn't find Him if I wanted to. And you were fools to ever take my word on it.\"\r\n\"Yes,\" said Mrs. Bellowes, \"we were fools. I'll go along on that. But you can't blame us, for we're old, and it was a lovely, good and fine idea, one of the loveliest ideas in the world. Oh, we didn't really fool ourselves that we could get nearer to Him physically. It was the gentle, mad dream of old people, the kind of thing you hold onto for a few minutes a day, even though you know it's not true. So, all of you who want to go, you follow me in the ship.\"\r\n\"But you can't go!\" said Mr. Thirkell. \"You haven't got a navigator. And that ship's a ruin!\"\r\n\"You,\" said Mrs. Bellowes, \"will be the navigator.\"\r\nShe stepped into the ship, and after a moment, the other old ladies pressed forward. Mr. Thirkell, windmilling his arms frantically, was nevertheless pressed through the port, and in a minute the door slammed shut. Mr. Thirkell was strapped into the navigator's seat, with everyone talking at once and holding him down. The special helmets were issued to be fitted over every gray or white head to supply extra oxygen in case of a leakage in the ship's hull, and at long last the hour had come and Mrs. Bellowes stood behind Mr. Thirkell and said, \"We're ready, sir.\"\r\nHe said nothing. He pleaded with them silently, using his great, dark, wet eyes, but Mrs. Bellowes shook her head and pointed to the control.\r\n\"Takeoff,\" agreed Mr. Thirkell morosely, and pulled a switch.\r\nEverybody fell. The rocket went up from the planet Mars in a great fiery glide, with the noise of an entire kitchen thrown down an elevator shaft, with a sound of pots and pans and kettles and fires boiling and stews bubbling, with a smell of burned incense and rubber and sulphur, with a color of yellow fire, and a ribbon of red stretching below them, and all the old women singing and holding to each other, and Mrs. Bellowes crawling upright in the sighing, straining, trembling ship.\r\n\"Head for space, Mr. Thirkell.\"\r\n\"It can't last,\" said Mr. Thirkell, sadly. \"This ship can't last. It will—\"\r\nIt did.\r\nThe rocket exploded.\r\nMrs. Bellowes felt herself lifted and thrown about dizzily, like a doll. She heard the great screamings and saw the flashes of bodies sailing by her in fragments of metal and powdery light.\r\n\"Help, help!\" cried Mr. Thirkell, far away, on a small radio beam.\r\nThe ship disintegrated into a million parts, and the old ladies, all one hundred of them, were flung straight on ahead with the same velocity as the ship.\r\nAs for Mr. Thirkell, for some reason of trajectory, perhaps, he had been blown out the other side of the ship. Mrs. Bellowes saw him falling separate and away from them, screaming, screaming.\r\nThere goes Mr. Thirkell, thought Mrs. Bellowes.\r\nAnd she knew where he was going. He was going to be burned and roasted and broiled good, but very good.\r\nMr. Thirkell was falling down into the Sun.\r\nAnd here we are, thought Mrs. Bellowes. Here we are, going on out, and out, and out.\r\nThere was hardly a sense of motion at all, but she knew that she was traveling at fifty thousand miles an hour and would continue to travel at that speed for an eternity, until....\r\nShe saw the other women swinging all about her in their own trajectories, a few minutes of oxygen left to each of them in their helmets, and each was looking up to where they were going.\r\nOf course, thought Mrs. Bellowes. Out into space. Out and out, and the darkness like a great church, and the stars like candles, and in spite of everything, Mr. Thirkell, the rocket, and the dishonesty, we are going toward the Lord.\r\nAnd there, yes, there, as she fell on and on, coming toward her, she could almost discern the outline now, coming toward her was His mighty golden hand, reaching down to hold her and comfort her like a frightened sparrow....\r\n\"I'm Mrs. Amelia Bellowes,\" she said quietly, in her best company voice. \"I'm from the planet Earth.\""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "stories" ("author", "title", "content", "snippet", "created_at", "updated_at", "genre_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["author", "Ray Bradbury"], ["title", "A Little Journey"], ["content", "There were two important things—one, that she was very old; two, that Mr. Thirkell was taking her to God. For hadn't he patted her hand and said: \"Mrs. Bellowes, we'll take off into space in my rocket, and go to find Him together.\"\r\nAnd that was how it was going to be. Oh, this wasn't like any other group Mrs. Bellowes had ever joined. In her fervor to light a path for her delicate, tottering feet, she had struck matches down dark alleys, and found her way to Hindu mystics who floated their flickering, starry eyelashes over crystal balls. She had walked on the meadow paths with ascetic Indian philosophers imported by daughters-in-spirit of Madame Blavatsky. She had made pilgrimages to California's stucco jungles to hunt the astrological seer in his natural habitat. She had even consented to signing away the rights to one of her homes in order to be taken into the shouting order of a temple of amazing evangelists who had promised her golden smoke, crystal fire, and the great soft hand of God coming to bear her home.\r\n\r\nNone of these people had ever shaken Mrs. Bellowes' faith, even when she saw them sirened away in a black wagon in the night, or discovered their pictures, bleak and unromantic, in the morning tabloids. The world had roughed them up and locked them away because they knew too much, that was all.\r\nAnd then, two weeks ago, she had seen Mr. Thirkell's advertisement in New York City:\r\nCOME TO MARS!\r\n\r\nStay at the Thirkell Restorium for one week. And then,\r\non into space on the greatest adventure life can offer!\r\n\r\nSend for Free Pamphlet: \"Nearer My God To Thee.\"\r\n\r\nExcursion rates. Round trip slightly lower.\r\n\r\n\"Round trip,\" Mrs. Bellowes had thought. \"But who would come back after seeing Him?\"\r\nAnd so she had bought a ticket and flown off to Mars and spent seven mild days at Mr. Thirkell's Restorium, the building with the sign on it which flashed: THIRKELL'S ROCKET TO HEAVEN! She had spent the week bathing in limpid waters and erasing the care from her tiny bones, and now she was fidgeting, ready to be loaded into Mr. Thirkell's own special private rocket, like a bullet, to be fired on out into space beyond Jupiter and Saturn and Pluto. And thus—who could deny it?—you would be getting nearer and nearer to the Lord. How wonderful! Couldn't you just feel Him drawing near? Couldn't you just sense His breath, His scrutiny, His Presence?\r\n\"Here I am,\" said Mrs. Bellowes, \"an ancient rickety elevator, ready to go up the shaft. God need only press the button.\"\r\nNow, on the seventh day, as she minced up the steps of the Restorium, a number of small doubts assailed her.\r\n\"For one thing,\" she said aloud to no one, \"it isn't quite the land of milk and honey here on Mars that they said it would be. My room is like a cell, the swimming pool is really quite inadequate, and, besides, how many widows who look like mushrooms or skeletons want to swim? And, finally, the whole Restorium smells of boiled cabbage and tennis shoes!\"\r\nShe opened the front door and let it slam, somewhat irritably.\r\nShe was amazed at the other women in the auditorium. It was like wandering in a carnival mirror-maze, coming again and again upon yourself—the same floury face, the same chicken hands, and jingling bracelets. One after another of the images of herself floated before her. She put out her hand, but it wasn't a mirror; it was another lady shaking her fingers and saying:\r\n\"We're waiting for Mr. Thirkell. Sh!\"\r\n\"Ah,\" whispered everyone.\r\nThe velvet curtains parted.\r\nMr. Thirkell appeared, fantastically serene, his Egyptian eyes upon everyone. But there was something, nevertheless, in his appearance which made one expect him to call \"Hi!\" while fuzzy dogs jumped over his legs, through his hooped arms, and over his back. Then, dogs and all, he should dance with a dazzling piano-keyboard smile off into the wings.\r\nMrs. Bellowes, with a secret part of her mind which she constantly had to grip tightly, expected to hear a cheap Chinese gong sound when Mr. Thirkell entered. His large liquid dark eyes were so improbable that one of the old ladies had facetiously claimed she saw a mosquito cloud hovering over them as they did around summer rain-barrels. And Mrs. Bellowes sometimes caught the scent of the theatrical mothball and the smell of calliope steam on his sharply pressed suit.\r\nBut with the same savage rationalization that had greeted all other disappointments in her rickety life, she bit at the suspicion and whispered, \"This time it's real. This time it'll work. Haven't we got a rocket?\"\r\nMr. Thirkell bowed. He smiled a sudden Comedy Mask smile. The old ladies looked in at his epiglottis and sensed chaos there.\r\nBefore he even began to speak, Mrs. Bellowes saw him picking up each of his words, oiling it, making sure it ran smooth on its rails. Her heart squeezed in like a tiny fist, and she gritted her porcelain teeth.\r\n\"Friends,\" said Mr. Thirkell, and you could hear the frost snap in the hearts of the entire assemblage.\r\n\"No!\" said Mrs. Bellowes ahead of time. She could hear the bad news rushing at her, and herself tied to the track while the immense black wheels threatened and the whistle screamed, helpless.\r\n\"There will be a slight delay,\" said Mr. Thirkell.\r\nIn the next instant, Mr. Thirkell might have cried, or been tempted to cry, \"Ladies, be seated!\" in minstrel-fashion, for the ladies had come up at him from their chairs, protesting and trembling.\r\n\"Not a very long delay.\" Mr. Thirkell put up his hands to pat the air.\r\n\"How long?\"\r\n\"Only a week.\"\r\n\"A week!\"\r\n\"Yes. You can stay here at the Restorium for seven more days, can't you? A little delay won't matter, will it, in the end? You've waited a lifetime. Only a few more days.\"\r\nAt twenty dollars a day, thought Mrs. Bellowes, coldly.\r\n\"What's the trouble?\" a woman cried.\r\n\"A legal difficulty,\" said Mr. Thirkell.\r\n\"We've a rocket, haven't we?\"\r\n\"Well, ye-ess.\"\r\n\"But I've been here a whole month, waiting,\" said one old lady. \"Delays, delays!\"\r\n\"That's right,\" said everyone.\r\n\"Ladies, ladies,\" murmured Mr. Thirkell, smiling serenely.\r\n\"We want to see the rocket!\" It was Mrs. Bellowes forging ahead, alone, brandishing her fist like a toy hammer.\r\nMr. Thirkell looked into the old ladies' eyes, a missionary among albino cannibals.\r\n\"Well, now,\" he said.\r\n\"Yes, now!\" cried Mrs. Bellowes.\r\n\"I'm afraid—\" he began.\r\n\"So am I!\" she said. \"That's why we want to see the ship!\"\r\n\"No, no, now, Mrs.—\" He snapped his fingers for her name.\r\n\"Bellowes!\" she cried. She was a small container, but now all the seething pressures that had been built up over long years came steaming through the delicate vents of her body. Her cheeks became incandescent. With a wail that was like a melancholy factory whistle, Mrs. Bellowes ran forward and hung to him, almost by her teeth, like a summer-maddened Spitz. She would not and never could let go, until he died, and the other women followed, jumping and yapping like a pound let loose on its trainer, the same one who had petted them and to whom they had squirmed and whined joyfully an hour before, now milling about him, creasing his sleeves and frightening the Egyptian serenity from his gaze.\r\n\"This way!\" cried Mrs. Bellowes, feeling like Madame Lafarge. \"Through the back! We've waited long enough to see the ship. Every day he's put us off, every day we've waited, now let's see.\"\r\n\"No, no, ladies!\" cried Mr. Thirkell, leaping about.\r\nThey burst through the back of the stage and out a door, like a flood, bearing the poor man with them into a shed, and then out, quite suddenly, into an abandoned gymnasium.\r\n\"There it is!\" said someone. \"The rocket.\"\r\nAnd then a silence fell that was terrible to entertain.\r\nThere was the rocket.\r\nMrs. Bellowes looked at it and her hands sagged away from Mr. Thirkell's collar.\r\nThe rocket was something like a battered copper pot. There were a thousand bulges and rents and rusty pipes and dirty vents on and in it. The ports were clouded over with dust, resembling the eyes of a blind hog.\r\nEveryone wailed a little sighing wail.\r\n\"Is that the rocket ship Glory Be to the Highest?\" cried Mrs. Bellowes, appalled.\r\nMr. Thirkell nodded and looked at his feet.\r\n\"For which we paid out our one thousand dollars apiece and came all the way to Mars to get on board with you and go off to find Him?\" asked Mrs. Bellowes.\r\n\"Why, that isn't worth a sack of dried peas,\" said Mrs. Bellowes.\r\n\"It's nothing but junk!\"\r\nJunk, whispered everyone, getting hysterical.\r\n\"Don't let him get away!\"\r\nMr. Thirkell tried to break and run, but a thousand possum traps closed on him from every side. He withered.\r\nEverybody walked around in circles like blind mice. There was a confusion and a weeping that lasted for five minutes as they went over and touched the Rocket, the Dented Kettle, the Rusty Container for God's Children.\r\n\"Well,\" said Mrs. Bellowes. She stepped up into the askew doorway of the rocket and faced everyone. \"It looks as if a terrible thing has been done to us,\" she said. \"I haven't any money to go back home to Earth and I've too much pride to go to the Government and tell them a common man like this has fooled us out of our life's savings. I don't know how you feel about it, all of you, but the reason all of us came is because I'm eighty-five, and you're eighty-nine, and you're seventy-eight, and all of us are nudging on toward a hundred, and there's nothing on Earth for us, and it doesn't appear there's anything on Mars either. We all expected not to breathe much more air or crochet many more doilies or we'd never have come here. So what I have to propose is a simple thing—to take a chance.\"\r\nShe reached out and touched the rusted hulk of the rocket.\r\n\"This is our rocket. We paid for our trip. And we're going to take our trip!\"\r\nEveryone rustled and stood on tiptoes and opened an astonished mouth.\r\nMr. Thirkell began to cry. He did it quite easily and very effectively.\r\n\"We're going to get in this ship,\" said Mrs. Bellowes, ignoring him. \"And we're going to take off to where we were going.\"\r\nMr. Thirkell stopped crying long enough to say, \"But it was all a fake. I don't know anything about space. He's not out there, anyway. I lied. I don't know where He is, and I couldn't find Him if I wanted to. And you were fools to ever take my word on it.\"\r\n\"Yes,\" said Mrs. Bellowes, \"we were fools. I'll go along on that. But you can't blame us, for we're old, and it was a lovely, good and fine idea, one of the loveliest ideas in the world. Oh, we didn't really fool ourselves that we could get nearer to Him physically. It was the gentle, mad dream of old people, the kind of thing you hold onto for a few minutes a day, even though you know it's not true. So, all of you who want to go, you follow me in the ship.\"\r\n\"But you can't go!\" said Mr. Thirkell. \"You haven't got a navigator. And that ship's a ruin!\"\r\n\"You,\" said Mrs. Bellowes, \"will be the navigator.\"\r\nShe stepped into the ship, and after a moment, the other old ladies pressed forward. Mr. Thirkell, windmilling his arms frantically, was nevertheless pressed through the port, and in a minute the door slammed shut. Mr. Thirkell was strapped into the navigator's seat, with everyone talking at once and holding him down. The special helmets were issued to be fitted over every gray or white head to supply extra oxygen in case of a leakage in the ship's hull, and at long last the hour had come and Mrs. Bellowes stood behind Mr. Thirkell and said, \"We're ready, sir.\"\r\nHe said nothing. He pleaded with them silently, using his great, dark, wet eyes, but Mrs. Bellowes shook her head and pointed to the control.\r\n\"Takeoff,\" agreed Mr. Thirkell morosely, and pulled a switch.\r\nEverybody fell. The rocket went up from the planet Mars in a great fiery glide, with the noise of an entire kitchen thrown down an elevator shaft, with a sound of pots and pans and kettles and fires boiling and stews bubbling, with a smell of burned incense and rubber and sulphur, with a color of yellow fire, and a ribbon of red stretching below them, and all the old women singing and holding to each other, and Mrs. Bellowes crawling upright in the sighing, straining, trembling ship.\r\n\"Head for space, Mr. Thirkell.\"\r\n\"It can't last,\" said Mr. Thirkell, sadly. \"This ship can't last. It will—\"\r\nIt did.\r\nThe rocket exploded.\r\nMrs. Bellowes felt herself lifted and thrown about dizzily, like a doll. She heard the great screamings and saw the flashes of bodies sailing by her in fragments of metal and powdery light.\r\n\"Help, help!\" cried Mr. Thirkell, far away, on a small radio beam.\r\nThe ship disintegrated into a million parts, and the old ladies, all one hundred of them, were flung straight on ahead with the same velocity as the ship.\r\nAs for Mr. Thirkell, for some reason of trajectory, perhaps, he had been blown out the other side of the ship. Mrs. Bellowes saw him falling separate and away from them, screaming, screaming.\r\nThere goes Mr. Thirkell, thought Mrs. Bellowes.\r\nAnd she knew where he was going. He was going to be burned and roasted and broiled good, but very good.\r\nMr. Thirkell was falling down into the Sun.\r\nAnd here we are, thought Mrs. Bellowes. Here we are, going on out, and out, and out.\r\nThere was hardly a sense of motion at all, but she knew that she was traveling at fifty thousand miles an hour and would continue to travel at that speed for an eternity, until....\r\nShe saw the other women swinging all about her in their own trajectories, a few minutes of oxygen left to each of them in their helmets, and each was looking up to where they were going.\r\nOf course, thought Mrs. Bellowes. Out into space. Out and out, and the darkness like a great church, and the stars like candles, and in spite of everything, Mr. Thirkell, the rocket, and the dishonesty, we are going toward the Lord.\r\nAnd there, yes, there, as she fell on and on, coming toward her, she could almost discern the outline now, coming toward her was His mighty golden hand, reaching down to hold her and comfort her like a frightened sparrow....\r\n\"I'm Mrs. Amelia Bellowes,\" she said quietly, in her best company voice. \"I'm from the planet Earth.\""], ["snippet", "There were two important things—one, that she was very old; two, that Mr. Thirkell was taking her to God. For hadn't he patted her hand and said: \"Mrs. Bellowes, we'll take off into space in my rocket, and go to find Him together.\"\r\nAnd that was how it was going to be. Oh, this wasn't like any other group Mrs. Bellowes had ever joined. In her fervor to light a path for her delicate, tottering feet, she had struck matches down dark alleys, and found her way to Hindu mystics who floated their flickering, starry eyelashes over crystal balls."], ["created_at", 2017-04-01 21:51:17 UTC], ["updated_at", 2017-04-01 21:51:17 UTC], ["genre_id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/genres
+Completed 302 Found in 40ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 21:51:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 272ms (Views: 258.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stories/new" for 10.0.2.2 at 2017-04-01 21:51:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#new as HTML
+  Rendering story/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered story/new.html.erb within layouts/application (2.0ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 263ms (Views: 251.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/stories" for 10.0.2.2 at 2017-04-01 21:52:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#create as HTML
+  Parameters: {"authenticity_token"=>"CLs8dbIUuT8Qv3DXNkREiHDEt2elC57uMtSj+eiqFTkCyS6NetI+JXg11WVYxNo2saxkxz4HKMqmN/UaZF0AEQ==", "title"=>"Beyond The Door", "genre"=>"2", "author"=>"Phillip K. Dick", "snippet"=>"That night at the dinner table he brought it out and set it down beside her plate. Doris stared at it, her hand to her mouth. \"My God, what is it?\" She looked up at him, bright-eyed.\r\n\r\n\"Well, open it.\"\r\n\r\nDoris tore the ribbon and paper from the square package with her sharp nails, her bosom rising and falling. Larry stood watching her as she lifted the lid. He lit a cigarette and leaned against the wall.", "content"=>"That night at the dinner table he brought it out and set it down beside her plate. Doris stared at it, her hand to her mouth. \"My God, what is it?\" She looked up at him, bright-eyed.\r\n\r\n\"Well, open it.\"\r\n\r\nDoris tore the ribbon and paper from the square package with her sharp nails, her bosom rising and falling. Larry stood watching her as she lifted the lid. He lit a cigarette and leaned against the wall.\r\n\r\n\"A cuckoo clock!\" Doris cried. \"A real old cuckoo clock like my mother had.\" She turned the clock over and over. \"Just like my mother had, when Pete was still alive.\" Her eyes sparkled with tears.\r\n\r\n\"It's made in Germany,\" Larry said. After a moment he added, \"Carl got it for me wholesale. He knows some guy in the clock business. Otherwise I wouldn't have—\" He stopped.\r\n\r\nDoris made a funny little sound.\r\n\r\n\"I mean, otherwise I wouldn't have been able to afford it.\" He scowled. \"What's the matter with you? You've got your clock, haven't you? Isn't that what you want?\"\r\n\r\nDoris sat holding onto the clock, her fingers pressed against the brown wood.\r\n\r\n\"Well,\" Larry said, \"what's the matter?\"\r\n\r\nHe watched in amazement as she leaped up and ran from the room, still clutching the clock. He shook his head. \"Never satisfied. They're all that way. Never get enough.\"\r\n\r\nHe sat down at the table and finished his meal.\r\n\r\nThe cuckoo clock was not very large. It was hand-made, however, and there were countless frets on it, little indentations and ornaments scored in the soft wood. Doris sat on the bed drying her eyes and winding the clock. She set the hands by her wristwatch. Presently she carefully moved the hands to two minutes of ten. She carried the clock over to the dresser and propped it up.\r\n\r\nThen she sat waiting, her hands twisted together in her lap—waiting for the cuckoo to come out, for the hour to strike.\r\n\r\nAs she sat she thought about Larry and what he had said. And what she had said, too, for that matter—not that she could be blamed for any of it. After all, she couldn't keep listening to him forever without defending herself; you had to blow your own trumpet in the world.\r\n\r\nShe touched her handkerchief to her eyes suddenly. Why did he have to say that, about getting it wholesale? Why did he have to spoil it all? If he felt that way he needn't have got it in the first place. She clenched her fists. He was so mean, so damn mean.\r\n\r\nBut she was glad of the little clock sitting there ticking to itself, with its funny grilled edges and the door. Inside the door was the cuckoo, waiting to come out. Was he listening, his head cocked on one side, listening to hear the clock strike so that he would know to come out?\r\n\r\nDid he sleep between hours? Well, she would soon see him: she could ask him. And she would show the clock to Bob. He would love it; Bob loved old things, even old stamps and buttons. He liked to go with her to the stores. Of course, it was a little awkward, but Larry had been staying at the office so much, and that helped. If only Larry didn't call up sometimes to—\r\n\r\nThere was a whirr. The clock shuddered and all at once the door opened. The cuckoo came out, sliding swiftly. He paused and looked around solemnly, scrutinizing her, the room, the furniture.\r\n\r\nIt was the first time he had seen her, she realized, smiling to herself in pleasure. She stood up, coming toward him shyly. \"Go on,\" she said. \"I'm waiting.\"\r\n\r\nThe cuckoo opened his bill. He whirred and chirped, quickly, rhythmically. Then, after a moment of contemplation, he retired. And the door snapped shut.\r\n\r\nShe was delighted. She clapped her hands and spun in a little circle. He was marvelous, perfect! And the way he had looked around, studying her, sizing her up. He liked her; she was certain of it. And she, of course, loved him at once, completely. He was just what she had hoped would come out of the little door.\r\n\r\nDoris went to the clock. She bent over the little door, her lips close to the wood. \"Do you hear me?\" she whispered. \"I think you're the most wonderful cuckoo in the world.\" She paused, embarrassed. \"I hope you'll like it here.\"\r\n\r\nThen she went downstairs again, slowly, her head high.\r\n\r\nLarry and the cuckoo clock really never got along well from the start. Doris said it was because he didn't wind it right, and it didn't like being only half-wound all the time. Larry turned the job of winding over to her; the cuckoo came out every quarter hour and ran the spring down without remorse, and someone had to be ever after it, winding it up again.\r\n\r\nDoris did her best, but she forgot a good deal of the time. Then Larry would throw his newspaper down with an elaborate weary motion and stand up. He would go into the dining-room where the clock was mounted on the wall over the fireplace. He would take the clock down and making sure that he had his thumb over the little door, he would wind it up.\r\n\r\n\"Why do you put your thumb over the door?\" Doris asked once.\r\n\r\n\"You're supposed to.\"\r\n\r\nShe raised an eyebrow. \"Are you sure? I wonder if it isn't that you don't want him to come out while you're standing so close.\"\r\n\r\n\"Why not?\"\r\n\r\n\"Maybe you're afraid of him.\"\r\n\r\nLarry laughed. He put the clock back on the wall and gingerly removed his thumb. When Doris wasn't looking he examined his thumb.\r\n\r\nThere was still a trace of the nick cut out of the soft part of it. Who—or what—had pecked at him?\r\n\r\nOne Saturday morning, when Larry was down at the office working over some important special accounts, Bob Chambers came to the front porch and rang the bell.\r\n\r\nDoris was taking a quick shower. She dried herself and slipped into her robe. When she opened the door Bob stepped inside, grinning.\r\n\r\n\"Hi,\" he said, looking around.\r\n\r\n\"It's all right. Larry's at the office.\"\r\n\r\n\"Fine.\" Bob gazed at her slim legs below the hem of the robe. \"How nice you look today.\"\r\n\r\nShe laughed. \"Be careful! Maybe I shouldn't let you in after all.\"\r\n\r\nThey looked at one another, half amused half frightened. Presently Bob said, \"If you want, I'll—\"\r\n\r\n\"No, for God's sake.\" She caught hold of his sleeve. \"Just get out of the doorway so I can close it. Mrs. Peters across the street, you know.\"\r\n\r\nShe closed the door. \"And I want to show you something,\" she said. \"You haven't seen it.\"\r\n\r\nHe was interested. \"An antique? Or what?\"\r\n\r\nShe took his arm, leading him toward the dining-room. \"You'll love it, Bobby.\" She stopped, wide-eyed. \"I hope you will. You must; you must love it. It means so much to me—he means so much.\"\r\n\r\n\"He?\" Bob frowned. \"Who is he?\"\r\n\r\nDoris laughed. \"You're jealous! Come on.\" A moment later they stood before the clock, looking up at it. \"He'll come out in a few minutes. Wait until you see him. I know you two will get along just fine.\"\r\n\r\n\"What does Larry think of him?\"\r\n\r\n\"They don't like each other. Sometimes when Larry's here he won't come out. Larry gets mad if he doesn't come out on time. He says—\"\r\n\r\n\"Says what?\"\r\n\r\nDoris looked down. \"He always says he's been robbed, even if he did get it wholesale.\" She brightened. \"But I know he won't come out because he doesn't like Larry. When I'm here alone he comes right out for me, every fifteen minutes, even though he really only has to come out on the hour.\"\r\n\r\nShe gazed up at the clock. \"He comes out for me because he wants to. We talk; I tell him things. Of course, I'd like to have him upstairs in my room, but it wouldn't be right.\"\r\n\r\nThere was the sound of footsteps on the front porch. They looked at each other, horrified.\r\n\r\nLarry pushed the front door open, grunting. He set his briefcase down and took off his hat. Then he saw Bob for the first time.\r\n\r\n\"Chambers. I'll be damned.\" His eyes narrowed. \"What are you doing here?\" He came into the dining-room. Doris drew her robe about her helplessly, backing away.\r\n\r\n\"I—\" Bob began. \"That is, we—\" He broke off, glancing at Doris. Suddenly the clock began to whirr. The cuckoo came rushing out, bursting into sound. Larry moved toward him.\r\n\r\n\"Shut that din off,\" he said. He raised his fist toward the clock. The cuckoo snapped into silence and retreated. The door closed. \"That's better.\" Larry studied Doris and Bob, standing mutely together.\r\n\r\n\"I came over to look at the clock,\" Bob said. \"Doris told me that it's a rare antique and that—\"\r\n\r\n\"Nuts. I bought it myself.\" Larry walked up to him. \"Get out of here.\" He turned to Doris. \"You too. And take that damn clock with you.\"\r\n\r\nHe paused, rubbing his chin. \"No. Leave the clock here. It's mine; I bought it and paid for it.\"\r\n\r\nIn the weeks that followed after Doris left, Larry and the cuckoo clock got along even worse than before. For one thing, the cuckoo stayed inside most of the time, sometimes even at twelve o'clock when he should have been busiest. And if he did come out at all he usually spoke only once or twice, never the correct number of times. And there was a sullen, uncooperative note in his voice, a jarring sound that made Larry uneasy and a little angry.\r\n\r\nBut he kept the clock wound, because the house was very still and quiet and it got on his nerves not to hear someone running around, talking and dropping things. And even the whirring of a clock sounded good to him.\r\n\r\nBut he didn't like the cuckoo at all. And sometimes he spoke to him.\r\n\r\n\"Listen,\" he said late one night to the closed little door. \"I know you can hear me. I ought to give you back to the Germans—back to the Black Forest.\" He paced back and forth. \"I wonder what they're doing now, the two of them. That young punk with his books and his antiques. A man shouldn't be interested in antiques; that's for women.\"\r\n\r\nHe set his jaw. \"Isn't that right?\"\r\n\r\nThe clock said nothing. Larry walked up in front of it. \"Isn't that right?\" he demanded. \"Don't you have anything to say?\"\r\n\r\nHe looked at the face of the clock. It was almost eleven, just a few seconds before the hour. \"All right. I'll wait until eleven. Then I want to hear what you have to say. You've been pretty quiet the last few weeks since she left.\"\r\n\r\nHe grinned wryly. \"Maybe you don't like it here since she's gone.\" He scowled. \"Well, I paid for you, and you're coming out whether you like it or not. You hear me?\"\r\n\r\nEleven o'clock came. Far off, at the end of town, the great tower clock boomed sleepily to itself. But the little door remained shut. Nothing moved. The minute hand passed on and the cuckoo did not stir. He was someplace inside the clock, beyond the door, silent and remote.\r\n\r\n\"All right, if that's the way you feel,\" Larry murmured, his lips twisting. \"But it isn't fair. It's your job to come out. We all have to do things we don't like.\"\r\n\r\nHe went unhappily into the kitchen and opened the great gleaming refrigerator. As he poured himself a drink he thought about the clock.\r\n\r\nThere was no doubt about it—the cuckoo should come out, Doris or no Doris. He had always liked her, from the very start. They had got along well, the two of them. Probably he liked Bob too—probably he had seen enough of Bob to get to know him. They would be quite happy together, Bob and Doris and the cuckoo.\r\n\r\nLarry finished his drink. He opened the drawer at the sink and took out the hammer. He carried it carefully into the dining-room. The clock was ticking gently to itself on the wall.\r\n\r\n\"Look,\" he said, waving the hammer. \"You know what I have here? You know what I'm going to do with it? I'm going to start on you—first.\" He smiled. \"Birds of a feather, that's what you are—the three of you.\"\r\n\r\nThe room was silent.\r\n\r\n\"Are you coming out? Or do I have to come in and get you?\"\r\n\r\nThe clock whirred a little.\r\n\r\n\"I hear you in there. You've got a lot of talking to do, enough for the last three weeks. As I figure it, you owe me—\"\r\n\r\nThe door opened. The cuckoo came out fast, straight at him. Larry was looking down, his brow wrinkled in thought. He glanced up, and the cuckoo caught him squarely in the eye.\r\n\r\nDown he went, hammer and chair and everything, hitting the floor with a tremendous crash. For a moment the cuckoo paused, its small body poised rigidly. Then it went back inside its house. The door snapped tight-shut after it.\r\n\r\nThe man lay on the floor, stretched out grotesquely, his head bent over to one side. Nothing moved or stirred. The room was completely silent, except, of course, for the ticking of the clock.\r\n\r\n\"I see,\" Doris said, her face tight. Bob put his arm around her, steadying her.\r\n\r\n\"Doctor,\" Bob said, \"can I ask you something?\"\r\n\r\n\"Of course,\" the doctor said.\r\n\r\n\"Is it very easy to break your neck, falling from so low a chair? It wasn't very far to fall. I wonder if it might not have been an accident. Is there any chance it might have been—\"\r\n\r\n\"Suicide?\" the doctor rubbed his jaw. \"I never heard of anyone committing suicide that way. It was an accident; I'm positive.\"\r\n\r\n\"I don't mean suicide,\" Bob murmured under his breath, looking up at the clock on the wall. \"I meant something else.\"\r\n\r\nBut no one heard him."}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "stories" ("author", "title", "content", "snippet", "created_at", "updated_at", "genre_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["author", "Phillip K. Dick"], ["title", "Beyond The Door"], ["content", "That night at the dinner table he brought it out and set it down beside her plate. Doris stared at it, her hand to her mouth. \"My God, what is it?\" She looked up at him, bright-eyed.\r\n\r\n\"Well, open it.\"\r\n\r\nDoris tore the ribbon and paper from the square package with her sharp nails, her bosom rising and falling. Larry stood watching her as she lifted the lid. He lit a cigarette and leaned against the wall.\r\n\r\n\"A cuckoo clock!\" Doris cried. \"A real old cuckoo clock like my mother had.\" She turned the clock over and over. \"Just like my mother had, when Pete was still alive.\" Her eyes sparkled with tears.\r\n\r\n\"It's made in Germany,\" Larry said. After a moment he added, \"Carl got it for me wholesale. He knows some guy in the clock business. Otherwise I wouldn't have—\" He stopped.\r\n\r\nDoris made a funny little sound.\r\n\r\n\"I mean, otherwise I wouldn't have been able to afford it.\" He scowled. \"What's the matter with you? You've got your clock, haven't you? Isn't that what you want?\"\r\n\r\nDoris sat holding onto the clock, her fingers pressed against the brown wood.\r\n\r\n\"Well,\" Larry said, \"what's the matter?\"\r\n\r\nHe watched in amazement as she leaped up and ran from the room, still clutching the clock. He shook his head. \"Never satisfied. They're all that way. Never get enough.\"\r\n\r\nHe sat down at the table and finished his meal.\r\n\r\nThe cuckoo clock was not very large. It was hand-made, however, and there were countless frets on it, little indentations and ornaments scored in the soft wood. Doris sat on the bed drying her eyes and winding the clock. She set the hands by her wristwatch. Presently she carefully moved the hands to two minutes of ten. She carried the clock over to the dresser and propped it up.\r\n\r\nThen she sat waiting, her hands twisted together in her lap—waiting for the cuckoo to come out, for the hour to strike.\r\n\r\nAs she sat she thought about Larry and what he had said. And what she had said, too, for that matter—not that she could be blamed for any of it. After all, she couldn't keep listening to him forever without defending herself; you had to blow your own trumpet in the world.\r\n\r\nShe touched her handkerchief to her eyes suddenly. Why did he have to say that, about getting it wholesale? Why did he have to spoil it all? If he felt that way he needn't have got it in the first place. She clenched her fists. He was so mean, so damn mean.\r\n\r\nBut she was glad of the little clock sitting there ticking to itself, with its funny grilled edges and the door. Inside the door was the cuckoo, waiting to come out. Was he listening, his head cocked on one side, listening to hear the clock strike so that he would know to come out?\r\n\r\nDid he sleep between hours? Well, she would soon see him: she could ask him. And she would show the clock to Bob. He would love it; Bob loved old things, even old stamps and buttons. He liked to go with her to the stores. Of course, it was a little awkward, but Larry had been staying at the office so much, and that helped. If only Larry didn't call up sometimes to—\r\n\r\nThere was a whirr. The clock shuddered and all at once the door opened. The cuckoo came out, sliding swiftly. He paused and looked around solemnly, scrutinizing her, the room, the furniture.\r\n\r\nIt was the first time he had seen her, she realized, smiling to herself in pleasure. She stood up, coming toward him shyly. \"Go on,\" she said. \"I'm waiting.\"\r\n\r\nThe cuckoo opened his bill. He whirred and chirped, quickly, rhythmically. Then, after a moment of contemplation, he retired. And the door snapped shut.\r\n\r\nShe was delighted. She clapped her hands and spun in a little circle. He was marvelous, perfect! And the way he had looked around, studying her, sizing her up. He liked her; she was certain of it. And she, of course, loved him at once, completely. He was just what she had hoped would come out of the little door.\r\n\r\nDoris went to the clock. She bent over the little door, her lips close to the wood. \"Do you hear me?\" she whispered. \"I think you're the most wonderful cuckoo in the world.\" She paused, embarrassed. \"I hope you'll like it here.\"\r\n\r\nThen she went downstairs again, slowly, her head high.\r\n\r\nLarry and the cuckoo clock really never got along well from the start. Doris said it was because he didn't wind it right, and it didn't like being only half-wound all the time. Larry turned the job of winding over to her; the cuckoo came out every quarter hour and ran the spring down without remorse, and someone had to be ever after it, winding it up again.\r\n\r\nDoris did her best, but she forgot a good deal of the time. Then Larry would throw his newspaper down with an elaborate weary motion and stand up. He would go into the dining-room where the clock was mounted on the wall over the fireplace. He would take the clock down and making sure that he had his thumb over the little door, he would wind it up.\r\n\r\n\"Why do you put your thumb over the door?\" Doris asked once.\r\n\r\n\"You're supposed to.\"\r\n\r\nShe raised an eyebrow. \"Are you sure? I wonder if it isn't that you don't want him to come out while you're standing so close.\"\r\n\r\n\"Why not?\"\r\n\r\n\"Maybe you're afraid of him.\"\r\n\r\nLarry laughed. He put the clock back on the wall and gingerly removed his thumb. When Doris wasn't looking he examined his thumb.\r\n\r\nThere was still a trace of the nick cut out of the soft part of it. Who—or what—had pecked at him?\r\n\r\nOne Saturday morning, when Larry was down at the office working over some important special accounts, Bob Chambers came to the front porch and rang the bell.\r\n\r\nDoris was taking a quick shower. She dried herself and slipped into her robe. When she opened the door Bob stepped inside, grinning.\r\n\r\n\"Hi,\" he said, looking around.\r\n\r\n\"It's all right. Larry's at the office.\"\r\n\r\n\"Fine.\" Bob gazed at her slim legs below the hem of the robe. \"How nice you look today.\"\r\n\r\nShe laughed. \"Be careful! Maybe I shouldn't let you in after all.\"\r\n\r\nThey looked at one another, half amused half frightened. Presently Bob said, \"If you want, I'll—\"\r\n\r\n\"No, for God's sake.\" She caught hold of his sleeve. \"Just get out of the doorway so I can close it. Mrs. Peters across the street, you know.\"\r\n\r\nShe closed the door. \"And I want to show you something,\" she said. \"You haven't seen it.\"\r\n\r\nHe was interested. \"An antique? Or what?\"\r\n\r\nShe took his arm, leading him toward the dining-room. \"You'll love it, Bobby.\" She stopped, wide-eyed. \"I hope you will. You must; you must love it. It means so much to me—he means so much.\"\r\n\r\n\"He?\" Bob frowned. \"Who is he?\"\r\n\r\nDoris laughed. \"You're jealous! Come on.\" A moment later they stood before the clock, looking up at it. \"He'll come out in a few minutes. Wait until you see him. I know you two will get along just fine.\"\r\n\r\n\"What does Larry think of him?\"\r\n\r\n\"They don't like each other. Sometimes when Larry's here he won't come out. Larry gets mad if he doesn't come out on time. He says—\"\r\n\r\n\"Says what?\"\r\n\r\nDoris looked down. \"He always says he's been robbed, even if he did get it wholesale.\" She brightened. \"But I know he won't come out because he doesn't like Larry. When I'm here alone he comes right out for me, every fifteen minutes, even though he really only has to come out on the hour.\"\r\n\r\nShe gazed up at the clock. \"He comes out for me because he wants to. We talk; I tell him things. Of course, I'd like to have him upstairs in my room, but it wouldn't be right.\"\r\n\r\nThere was the sound of footsteps on the front porch. They looked at each other, horrified.\r\n\r\nLarry pushed the front door open, grunting. He set his briefcase down and took off his hat. Then he saw Bob for the first time.\r\n\r\n\"Chambers. I'll be damned.\" His eyes narrowed. \"What are you doing here?\" He came into the dining-room. Doris drew her robe about her helplessly, backing away.\r\n\r\n\"I—\" Bob began. \"That is, we—\" He broke off, glancing at Doris. Suddenly the clock began to whirr. The cuckoo came rushing out, bursting into sound. Larry moved toward him.\r\n\r\n\"Shut that din off,\" he said. He raised his fist toward the clock. The cuckoo snapped into silence and retreated. The door closed. \"That's better.\" Larry studied Doris and Bob, standing mutely together.\r\n\r\n\"I came over to look at the clock,\" Bob said. \"Doris told me that it's a rare antique and that—\"\r\n\r\n\"Nuts. I bought it myself.\" Larry walked up to him. \"Get out of here.\" He turned to Doris. \"You too. And take that damn clock with you.\"\r\n\r\nHe paused, rubbing his chin. \"No. Leave the clock here. It's mine; I bought it and paid for it.\"\r\n\r\nIn the weeks that followed after Doris left, Larry and the cuckoo clock got along even worse than before. For one thing, the cuckoo stayed inside most of the time, sometimes even at twelve o'clock when he should have been busiest. And if he did come out at all he usually spoke only once or twice, never the correct number of times. And there was a sullen, uncooperative note in his voice, a jarring sound that made Larry uneasy and a little angry.\r\n\r\nBut he kept the clock wound, because the house was very still and quiet and it got on his nerves not to hear someone running around, talking and dropping things. And even the whirring of a clock sounded good to him.\r\n\r\nBut he didn't like the cuckoo at all. And sometimes he spoke to him.\r\n\r\n\"Listen,\" he said late one night to the closed little door. \"I know you can hear me. I ought to give you back to the Germans—back to the Black Forest.\" He paced back and forth. \"I wonder what they're doing now, the two of them. That young punk with his books and his antiques. A man shouldn't be interested in antiques; that's for women.\"\r\n\r\nHe set his jaw. \"Isn't that right?\"\r\n\r\nThe clock said nothing. Larry walked up in front of it. \"Isn't that right?\" he demanded. \"Don't you have anything to say?\"\r\n\r\nHe looked at the face of the clock. It was almost eleven, just a few seconds before the hour. \"All right. I'll wait until eleven. Then I want to hear what you have to say. You've been pretty quiet the last few weeks since she left.\"\r\n\r\nHe grinned wryly. \"Maybe you don't like it here since she's gone.\" He scowled. \"Well, I paid for you, and you're coming out whether you like it or not. You hear me?\"\r\n\r\nEleven o'clock came. Far off, at the end of town, the great tower clock boomed sleepily to itself. But the little door remained shut. Nothing moved. The minute hand passed on and the cuckoo did not stir. He was someplace inside the clock, beyond the door, silent and remote.\r\n\r\n\"All right, if that's the way you feel,\" Larry murmured, his lips twisting. \"But it isn't fair. It's your job to come out. We all have to do things we don't like.\"\r\n\r\nHe went unhappily into the kitchen and opened the great gleaming refrigerator. As he poured himself a drink he thought about the clock.\r\n\r\nThere was no doubt about it—the cuckoo should come out, Doris or no Doris. He had always liked her, from the very start. They had got along well, the two of them. Probably he liked Bob too—probably he had seen enough of Bob to get to know him. They would be quite happy together, Bob and Doris and the cuckoo.\r\n\r\nLarry finished his drink. He opened the drawer at the sink and took out the hammer. He carried it carefully into the dining-room. The clock was ticking gently to itself on the wall.\r\n\r\n\"Look,\" he said, waving the hammer. \"You know what I have here? You know what I'm going to do with it? I'm going to start on you—first.\" He smiled. \"Birds of a feather, that's what you are—the three of you.\"\r\n\r\nThe room was silent.\r\n\r\n\"Are you coming out? Or do I have to come in and get you?\"\r\n\r\nThe clock whirred a little.\r\n\r\n\"I hear you in there. You've got a lot of talking to do, enough for the last three weeks. As I figure it, you owe me—\"\r\n\r\nThe door opened. The cuckoo came out fast, straight at him. Larry was looking down, his brow wrinkled in thought. He glanced up, and the cuckoo caught him squarely in the eye.\r\n\r\nDown he went, hammer and chair and everything, hitting the floor with a tremendous crash. For a moment the cuckoo paused, its small body poised rigidly. Then it went back inside its house. The door snapped tight-shut after it.\r\n\r\nThe man lay on the floor, stretched out grotesquely, his head bent over to one side. Nothing moved or stirred. The room was completely silent, except, of course, for the ticking of the clock.\r\n\r\n\"I see,\" Doris said, her face tight. Bob put his arm around her, steadying her.\r\n\r\n\"Doctor,\" Bob said, \"can I ask you something?\"\r\n\r\n\"Of course,\" the doctor said.\r\n\r\n\"Is it very easy to break your neck, falling from so low a chair? It wasn't very far to fall. I wonder if it might not have been an accident. Is there any chance it might have been—\"\r\n\r\n\"Suicide?\" the doctor rubbed his jaw. \"I never heard of anyone committing suicide that way. It was an accident; I'm positive.\"\r\n\r\n\"I don't mean suicide,\" Bob murmured under his breath, looking up at the clock on the wall. \"I meant something else.\"\r\n\r\nBut no one heard him."], ["snippet", "That night at the dinner table he brought it out and set it down beside her plate. Doris stared at it, her hand to her mouth. \"My God, what is it?\" She looked up at him, bright-eyed.\r\n\r\n\"Well, open it.\"\r\n\r\nDoris tore the ribbon and paper from the square package with her sharp nails, her bosom rising and falling. Larry stood watching her as she lifted the lid. He lit a cigarette and leaned against the wall."], ["created_at", 2017-04-01 21:52:39 UTC], ["updated_at", 2017-04-01 21:52:39 UTC], ["genre_id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/genres
+Completed 302 Found in 14ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 21:52:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (1.5ms)
+  Rendered shared/_nav.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 322ms (Views: 305.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:52:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 341ms (Views: 319.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:52:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (5.0ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 447ms (Views: 408.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:52:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (1.3ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 430ms (Views: 374.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:52:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 427ms (Views: 376.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:52:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 435ms (Views: 364.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:52:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 390ms (Views: 345.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:52:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 388ms (Views: 326.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:52:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 419ms (Views: 367.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:52:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 376ms (Views: 317.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:53:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 412ms (Views: 364.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:53:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 429ms (Views: 368.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:53:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (2.2ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.3ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 434ms (Views: 376.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:54:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 414ms (Views: 392.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:54:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 488ms (Views: 436.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:54:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 390ms (Views: 368.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:54:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 401ms (Views: 348.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:54:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 372ms (Views: 343.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:54:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 275ms (Views: 261.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:55:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.5ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.3ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 293ms (Views: 277.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:55:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 294ms (Views: 257.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:55:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 448ms (Views: 385.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:55:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 373ms (Views: 305.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:55:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 416ms (Views: 330.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:55:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (2.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 330ms (Views: 302.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:55:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 360ms (Views: 296.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:56:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (2.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 339ms (Views: 293.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:56:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 343ms (Views: 293.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:56:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 393ms (Views: 324.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:56:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 346ms (Views: 312.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:56:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.4ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 347ms (Views: 301.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:56:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.1ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 290ms (Views: 270.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:57:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (4.6ms)
+  Rendered shared/_nav.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 1285ms (Views: 1189.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:57:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.0ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 340ms (Views: 300.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:57:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.0ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 429ms (Views: 357.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:57:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (11.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 442ms (Views: 328.9ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:59:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.0ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (4.2ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 1383ms (Views: 1267.7ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:59:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.3ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 329ms (Views: 282.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:59:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 392ms (Views: 306.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:59:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (20.7ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `snippet' for nil:NilClass
+Did you mean?  inspect):
+    1: <a href="/genres">Back to Genres</a>
+    2: <h1 class="text-center"><%=@genre.genre%></h1>
+    3: <h4 class="text-center">Like what you read so far?</h4>
+    4: <p class="story"><%=@story.snippet%></p>
+    5: <a class="btn btn-danger" href="/genres/<%=@genre.id%>">Not Feeling It</a>
+    6: <a class="btn btn-success" href="/genres/<%=@genre.id%>/stories/<%=@story.id%>">Read More</a>
+  
+app/views/genre/snippet.html.erb:4:in `_app_views_genre_snippet_html_erb___3463204789192286923_70334217191520'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.4ms)
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 21:59:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (5.1ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 1322ms (Views: 1293.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 21:59:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 439ms (Views: 389.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:59:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.0ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 554ms (Views: 388.2ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:59:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 402ms (Views: 337.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:59:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (2.2ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.2ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 356ms (Views: 310.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 21:59:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (3.5ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 389ms (Views: 320.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 459ms (Views: 381.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.3ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 442ms (Views: 367.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.2ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 452ms (Views: 389.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 399ms (Views: 320.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 507ms (Views: 438.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 400ms (Views: 328.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 455ms (Views: 383.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 417ms (Views: 347.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.5ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.1ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 417ms (Views: 351.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (15.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.3ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 516ms (Views: 397.6ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.0ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.5ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 370ms (Views: 308.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:00:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.0ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 355ms (Views: 295.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 422ms (Views: 351.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.5ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (0.2ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 444ms (Views: 369.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 386ms (Views: 319.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 445ms (Views: 378.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 382ms (Views: 315.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 383ms (Views: 293.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 410ms (Views: 328.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 365ms (Views: 303.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 391ms (Views: 317.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 485ms (Views: 406.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 494ms (Views: 426.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 365ms (Views: 293.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:03:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 354ms (Views: 288.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:05:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 397ms (Views: 333.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:05:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.2ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 5160ms (Views: 5128.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:06:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.5ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3645ms (Views: 3627.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/genres/2/stories/5" for 10.0.2.2 at 2017-04-01 22:06:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#show as HTML
+  Parameters: {"genre_id"=>"2", "story_id"=>"5"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.3ms)[0m  [1m[34mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering story/show.html.erb within layouts/application
+  Rendered story/show.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 329ms (Views: 296.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-01 22:07:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (2.3ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 428ms (Views: 361.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 22:07:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 384ms (Views: 342.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 22:07:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 265ms (Views: 252.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 22:08:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 309ms (Views: 285.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-01 22:08:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 264ms (Views: 247.7ms | ActiveRecord: 0.0ms)
+
+
