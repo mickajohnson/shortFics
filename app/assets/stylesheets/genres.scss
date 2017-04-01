@@ -29,7 +29,9 @@ footer{
     margin-bottom: 0px;
   }
 }
-
+.navbar-toggle{
+  margin-top: 15px;
+}
 .main{
   min-height: calc(100vh - 152px);
 }
@@ -39,4 +41,11 @@ footer{
 }
 .form-control{
   width: 75%;
+}
+
+@media screen and (max-width: 462px){
+  .btn{
+    display: block;
+    margin-bottom: 2px;
+  }
 }
