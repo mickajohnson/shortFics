@@ -5,6 +5,6 @@ class GenreController < ApplicationController
   def snippet
     @genre = Genre.find(params[:genre_id])
     stories = Story.where("genre_id = ?", @genre.id)
-    @story = stories[rand(1...stories.length)]
+    @story = stories.sample
   end
 end
