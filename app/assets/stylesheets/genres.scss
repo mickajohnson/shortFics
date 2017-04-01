@@ -14,3 +14,28 @@ img{
 .jumbotron{
   text-align: center;
 }
+footer{
+  background: #F8F8F8;
+  height: 60px;  /* footer height */
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p{
+    margin-bottom: 0px;
+  }
+}
+
+.main{
+  min-height: calc(100vh - 152px);
+}
+
+.inline{
+  display: inline-block;
+}
+.form-control{
+  width: 75%;
+}
