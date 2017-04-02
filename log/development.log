@@ -7292,3 +7292,50 @@ Processing by StoryController#show as HTML
 Completed 200 OK in 328ms (Views: 289.1ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 16:32:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genre/snippet.html.erb within layouts/application
+  [1m[36mStory Load (1.2ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2) ORDER BY random()[0m
+  Rendered genre/snippet.html.erb within layouts/application (21.1ms)
+Completed 500 Internal Server Error in 3176ms (ActiveRecord: 7.8ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...s/Blackfat_Demo": expected ")", was ".ttf) format("t..."):
+    4:     <title>Short-Fics</title>
+    5:     <meta name="viewport" content="width=device-width">
+    6:     <%= csrf_meta_tags %>
+    7:     <%= favicon_link_tag 'favicon.ico' %>
+    8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   10:   </head>
+  
+app/assets/stylesheets/genres.scss:3
+app/assets/stylesheets/application.css.sass:20
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__819063137445672179_29972760'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.5ms)
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 16:32:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genre/snippet.html.erb within layouts/application
+  [1m[36mStory Load (1.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2) ORDER BY random()[0m
+  Rendered genre/snippet.html.erb within layouts/application (3.6ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 4751ms (Views: 4718.4ms | ActiveRecord: 1.9ms)
+
+

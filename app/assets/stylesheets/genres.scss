@@ -1,10 +1,14 @@
 @font-face {
   font-family: "Blackfat_Demo";
-  src: url(/assets/Blackfat_Demo.ttf) format("truetype");
+  src: font-url('/assets/Blackfat_Demo.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "SpaceMono-Regular";
-  src: url(/assets/SpaceMono-Regular.ttf) format("truetype");
+  src: font-url('/assets/SpaceMono-Regular.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 p {
