@@ -75,8 +75,8 @@ footer{
 .inline{
   display: inline-block;
 }
-.form-control{
-  width: 75%;
+.form-control {
+  margin-bottom: 1em;
 }
 
 .jumbotron {
@@ -92,6 +92,15 @@ footer{
   background-color: #FFFFFF;
 }
 
+#nav-button {
+  border: 0px solid #FFFFFF;
+  padding: 0px;
+}
+
+.hover-undeline:hover {
+  text-decoration: underline;
+}
+
 #no-border {
   border: 0px solid #FFFFFF;
   box-shadow: 0px 0px 0px #FFFFFF;
@@ -105,6 +114,42 @@ footer{
 }
 .orange-button {
   background-color: #DFAB72
+}
+.black-button:hover {
+  color: #DFAB72
+}
+.navy-button:hover {
+  color: #DFAB72
+}
+.orange-button:hover {
+  color: #262262
+}
+
+.navbar-brand {
+  padding: 0px;
+  display: inline-block;
+  vertical-align: center;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 0px;
+  display: inline-block;
+  vertical-align: center;
+  width: auto;
+}
+
+#home-img {
+  margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.dropdown-toggle {
+  padding-top: 0px
+}
+
+.navbar {
+  margin-bottom: 0px
 }
 
 .btn {
@@ -130,13 +175,17 @@ background-color:#FFFFFF;
    .dropdown-menu > li > a:focus {
     color: #262626;
    text-decoration: none;
-  background-color: #66CCFF;  /*change color of links in drop down here*/
+  background-color: #DFAB72;  /*change color of links in drop down here*/
    }
 
  .nav > li > a:hover,
  .nav > li > a:focus {
     text-decoration: none;
     background-color: #000000; /*Change rollover cell color here*/
+  }
+
+  .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #FFFFFF
   }
 
 

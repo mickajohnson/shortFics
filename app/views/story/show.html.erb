@@ -1,5 +1,8 @@
-<a href="/genres/<%=@genre.id%>">Back to <%=@genre.genre%></a>
 <h1 class="text-center big-header"><%=@story.title%></h1>
 <p class="story"><%=@story.content%></p>
-<h2 class="text-center"><%=@story.author%></h2>
-<a href="/genres/<%=@genre.id%>">Back to <%=@genre.genre%></a>
+<h3 class="text-center">-<%=@story.author%></h3>
+<div class="row">
+    <a class="btn black-button col-xs-4 col-xs-offset-1 href="/genres/%>Genres</a>
+
+    <a class="btn navy-button col-xs-4 col-xs-offset-2" href="/genres/<%=@genre.id%>"><%=@genre.genre%></a>
+</div>

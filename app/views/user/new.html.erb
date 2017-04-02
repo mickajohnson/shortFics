@@ -8,8 +8,13 @@
   <form action="/users" method="post">
     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
     <div class="form-group">
-      <input class="form-control" type="text" name="name" placeholder="Enter Your Name">
-      <input type="submit" class="btn navy-button inline" value="Submit">
+      <input class="form-control col-xs-12" type="text" name="name" placeholder="Enter Your Name">
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+
+      </div>
+      <input type="submit" class="btn navy-button col-xs-6" value="Submit">
     </div>
   </form>
 </div>
