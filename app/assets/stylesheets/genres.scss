@@ -138,10 +138,23 @@ footer{
   width: auto;
 }
 
-#home-img {
-  margin-left: auto;
-	margin-right: auto;
-	display: block;
+#big-logo {
+  margin-left: -15px;
+}
+.login {
+  margin-top: -50px
+}
+
+.author {
+  margin: 10px
+}
+
+.brand-logo {
+  position: absolute;
+  margin-top:5px;
+  left: 47.5%;
+  padding: 0px;
+  width: 65px;
 }
 
 .dropdown-toggle {
