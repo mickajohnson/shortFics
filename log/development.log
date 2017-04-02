@@ -7207,3 +7207,88 @@ Processing by GenreController#snippet as HTML
 Completed 200 OK in 3694ms (Views: 3678.4ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/genres/2/stories/3" for 10.0.2.2 at 2017-04-02 16:21:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StoryController#show as HTML
+  Parameters: {"genre_id"=>"2", "story_id"=>"3"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.9ms)[0m  [1m[34mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering story/show.html.erb within layouts/application
+  Rendered story/show.html.erb within layouts/application (4.0ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 3085ms (Views: 2988.7ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 16:21:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genre/snippet.html.erb within layouts/application
+  [1m[36mStory Load (1.0ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2) ORDER BY random()[0m
+  Rendered genre/snippet.html.erb within layouts/application (3.1ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 298ms (Views: 278.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/genres/2/stories/4" for 10.0.2.2 at 2017-04-02 16:21:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#show as HTML
+  Parameters: {"genre_id"=>"2", "story_id"=>"4"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering story/show.html.erb within layouts/application
+  Rendered story/show.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 406ms (Views: 370.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 16:21:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genre/snippet.html.erb within layouts/application
+  [1m[36mStory Load (1.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2) ORDER BY random()[0m
+  Rendered genre/snippet.html.erb within layouts/application (3.9ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 387ms (Views: 338.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 16:22:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genre/snippet.html.erb within layouts/application
+  [1m[36mStory Load (0.5ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2) ORDER BY random()[0m
+  Rendered genre/snippet.html.erb within layouts/application (2.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 349ms (Views: 331.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/2/stories/4" for 10.0.2.2 at 2017-04-02 16:23:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#show as HTML
+  Parameters: {"genre_id"=>"2", "story_id"=>"4"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.4ms)[0m  [1m[34mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering story/show.html.erb within layouts/application
+  Rendered story/show.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 328ms (Views: 289.1ms | ActiveRecord: 0.9ms)
+
+
