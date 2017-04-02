@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Blackfat_Demo";
+  src: url(/assets/Blackfat_Demo.ttf) format("truetype");
+}
+@font-face {
+  font-family: "SpaceMono-Regular";
+  src: url(/assets/SpaceMono-Regular.ttf) format("truetype");
+}
+
 p {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   margin-bottom: 15px;
@@ -5,8 +14,17 @@ p {
   font-weight: 200;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 200;
+}
+
 .big-header {
-  margin-top: 0px
+  margin-top: 0px;
+}
+
+.blackfat {
+  font-family: "Blackfat_Demo";
 }
 
 .well{
@@ -16,6 +34,18 @@ p {
 .jumbotron{
   text-align: center;
 }
+.carousel-control.left, .carousel-control.right {
+   background-image:none !important;
+   filter:none !important;
+   color: #262248;
+}
+
+.carousel-content {
+  color:black;
+  display:flex;
+  align-items:center;
+}
+
 footer{
   background: #F8F8F8;
   height: 60px;  /* footer height */
@@ -111,6 +141,9 @@ background-color:#FFFFFF;
   .navbar-default .navbar-nav > li > a {
    color: #262248; /*Change active text color here*/
     }
+.read_more {
+  display: inline-block;
+}
 
 
 @media screen and (max-width: 462px){

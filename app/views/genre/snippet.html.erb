@@ -1,7 +1,63 @@
+<script type="text/javascript">
+setCarouselHeight('#carousel-example');
+
+   function setCarouselHeight(id)
+   {
+       var slideHeight = [];
+       $(id+' .item').each(function()
+       {
+           // add all slide heights to an array
+           slideHeight.push($(this).height());
+       });
+
+       // find the tallest item
+       max = Math.max.apply(null, slideHeight);
+
+       // set the slide's height
+       $(id+' .carousel-content').each(function()
+       {
+           $(this).css('height',max+'px');
+       });
+   }
+   $(document).ready(function(){
+     $('.carousel-control.left').click(function() {
+   $('#myCarousel').carousel('prev');
+ });
+
+ $('.carousel-control.right').click(function() {
+   $('#myCarousel').carousel('next');
+ });
+   })
+</script>
+
+
 <a href="/genres">Back</a>
-<h1 class="text-center big-header"><%=@genre.genre%></h1>
-<h3 class="text-center"><%=@story.title%></h3>
-<p class="story"><%=@story.snippet%></p>
-<h4 class="text-center">Like what you read so far?</h4>
-<a class="btn navy-button" href="/genres/<%=@genre.id%>">Not Feeling It</a>
-<a class="btn black-button" href="/genres/<%=@genre.id%>/stories/<%=@story.id%>">Read More</a>
+<h1 class="text-center big-header blackfat"><%=@genre.genre%></h1>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+  <div class="row">
+    <div class="col-xs-offset-2 col-xs-8">
+      <div class="carousel-inner">
+        <%@stories.each do |story|%>
+        <div class="item <%if story == @stories.first%>active<%end%>">
+          <div class="carousel-content">
+            <div>
+              <h3><%=story.title%></h3>
+              <p><%=truncate story.snippet, length: 400 %></p>
+              <h4 class="text-center">Like what you read so far?</h4>
+              <div class="row">
+                <a class="col-xs-6 col-xs-offset-3 read_more btn navy-button" href="/genres/<%=@genre.id%>/stories/<%=story.id%>">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>

@@ -3,9 +3,9 @@ class GenreController < ApplicationController
   end
 
   def snippet
+    puts "hit"
     @genre = Genre.find(params[:genre_id])
-    stories = Story.where("genre_id = ?", @genre.id)
-    @story = stories.sample
+    @stories = Story.where("genre_id = ?", @genre.id).order('random()')
   end
   def info
 
