@@ -1,6 +1,7 @@
-<a href="/genres">Back to Genres</a>
-<h1 class="text-center"><%=@genre.genre%></h1>
-<h4 class="text-center">Like what you read so far?</h4>
+<a href="/genres">Back</a>
+<h1 class="text-center big-header"><%=@genre.genre%></h1>
+<h3 class="text-center"><%=@story.title%></h3>
 <p class="story"><%=@story.snippet%></p>
-<a class="btn btn-danger" href="/genres/<%=@genre.id%>">Not Feeling It</a>
-<a class="btn btn-success" href="/genres/<%=@genre.id%>/stories/<%=@story.id%>">Read More</a>
+<h4 class="text-center">Like what you read so far?</h4>
+<a class="btn navy-button" href="/genres/<%=@genre.id%>">Not Feeling It</a>
+<a class="btn black-button" href="/genres/<%=@genre.id%>/stories/<%=@story.id%>">Read More</a>

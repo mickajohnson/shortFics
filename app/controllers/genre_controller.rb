@@ -7,4 +7,7 @@ class GenreController < ApplicationController
     stories = Story.where("genre_id = ?", @genre.id)
     @story = stories.sample
   end
+  def info
+
+  end
 end

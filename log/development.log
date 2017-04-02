@@ -3612,3 +3612,1614 @@ Processing by GenreController#index as HTML
 Completed 200 OK in 331ms (Views: 315.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:43:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (3.4ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 2414ms (Views: 2389.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:47:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 4382ms (Views: 4359.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:47:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3822ms (Views: 3804.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:48:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3700ms (Views: 3685.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:49:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 1057ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "  margin": expected ";", was ": 0 auto;"):
+     5:     <meta name="viewport" content="width=device-width">
+     6:     <%= csrf_meta_tags %>
+     7:     <%= favicon_link_tag 'favicon.ico' %>
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <script>
+    11:   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  
+app/assets/stylesheets/genres.scss:39
+app/assets/stylesheets/application.css.sass:20
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3699568043276213597_70263973742780'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.0ms)
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:49:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.3ms)
+  Rendered shared/_flash.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3982ms (Views: 3960.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:52:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 3733ms (Views: 3718.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:52:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 304ms (Views: 289.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:54:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 4161ms (Views: 4135.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:55:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 3846ms (Views: 3819.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:57:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3808ms (Views: 3794.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:59:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 3722ms (Views: 3710.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:59:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 4112ms (Views: 4096.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:59:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 282ms (Views: 269.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 00:59:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 293ms (Views: 278.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:00:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 358ms (Views: 327.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:00:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 271ms (Views: 259.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:02:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 3671ms (Views: 3657.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:02:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 3864ms (Views: 3849.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:03:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.0ms)
+Completed 200 OK in 3621ms (Views: 3602.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:06:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3887ms (Views: 3874.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:06:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 255ms (Views: 242.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:07:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3545ms (Views: 3531.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:08:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3795ms (Views: 3775.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:09:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3779ms (Views: 3763.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:09:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 357ms (Views: 344.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/1" for 10.0.2.2 at 2017-04-02 01:10:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"1"}
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 1)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 397ms (Views: 290.9ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:10:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 297ms (Views: 262.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 01:10:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.2ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 339ms (Views: 293.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:10:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 324ms (Views: 297.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:16:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 316ms (Views: 301.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:16:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 336ms (Views: 311.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/genres/3/stories/2" for 10.0.2.2 at 2017-04-02 01:16:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#show as HTML
+  Parameters: {"genre_id"=>"3", "story_id"=>"2"}
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.5ms)[0m  [1m[34mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering story/show.html.erb within layouts/application
+  Rendered story/show.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 310ms (Views: 288.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:16:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (2.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 369ms (Views: 328.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:16:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 300ms (Views: 287.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:19:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 286ms (Views: 272.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:22:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (2.0ms)
+Completed 200 OK in 4545ms (Views: 4530.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:23:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3631ms (Views: 3613.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:23:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3569ms (Views: 3551.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 01:24:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.2ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 457ms (Views: 412.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/genres/edited_logo_1.jpg" for 10.0.2.2 at 2017-04-02 01:24:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as JPEG
+  Parameters: {"genre_id"=>"edited_logo_1"}
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Genre with 'id'=edited_logo_1):
+  
+app/controllers/genre_controller.rb:6:in `snippet'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.0ms)
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 01:24:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3719ms (Views: 3699.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 01:25:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 3761ms (Views: 3741.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:26:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 4818ms (Views: 4783.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:26:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 496ms (Views: 468.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:27:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3773ms (Views: 3757.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:28:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (4.2ms)
+  Rendered shared/_flash.html.erb (1.9ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 589ms (Views: 573.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edited_logo_2.jpg" for 10.0.2.2 at 2017-04-02 01:28:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:28:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.3ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 1167ms (Views: 1144.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edited_logo_2.jpg" for 10.0.2.2 at 2017-04-02 01:28:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:28:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 462ms (Views: 421.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:28:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 323ms (Views: 303.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 01:29:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 319ms (Views: 304.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/1" for 10.0.2.2 at 2017-04-02 01:29:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"1"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (1.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 1)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 328ms (Views: 304.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/genres/edited_logo_2.jpg" for 10.0.2.2 at 2017-04-02 01:29:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as JPEG
+  Parameters: {"genre_id"=>"edited_logo_2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Genre with 'id'=edited_logo_2):
+  
+app/controllers/genre_controller.rb:6:in `snippet'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.0ms)
+Started GET "/genres/1" for 10.0.2.2 at 2017-04-02 01:31:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"1"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (1.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 1)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 318ms (Views: 300.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/genres/" for 10.0.2.2 at 2017-04-02 01:31:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.4ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 343ms (Views: 329.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/edited_logo_2.jpg" for 10.0.2.2 at 2017-04-02 01:31:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as JPEG
+  Parameters: {"genre_id"=>"edited_logo_2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 9ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Genre with 'id'=edited_logo_2):
+  
+app/controllers/genre_controller.rb:6:in `snippet'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.6ms)
+Started GET "/genres/edited_logo_2.jpg" for 10.0.2.2 at 2017-04-02 01:31:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as JPEG
+  Parameters: {"genre_id"=>"edited_logo_2"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Genre with 'id'=edited_logo_2):
+  
+app/controllers/genre_controller.rb:6:in `snippet'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.2ms)
+Started GET "/genres/" for 10.0.2.2 at 2017-04-02 01:32:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 296ms (Views: 281.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/edited_logo_2.jpg" for 10.0.2.2 at 2017-04-02 01:32:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as JPEG
+  Parameters: {"genre_id"=>"edited_logo_2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Genre with 'id'=edited_logo_2):
+  
+app/controllers/genre_controller.rb:6:in `snippet'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.9ms)
+Started GET "/genres/edited_logo_2.jpg" for 10.0.2.2 at 2017-04-02 01:32:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as JPEG
+  Parameters: {"genre_id"=>"edited_logo_2"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Genre with 'id'=edited_logo_2):
+  
+app/controllers/genre_controller.rb:6:in `snippet'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.9ms)
+Started GET "/genres/" for 10.0.2.2 at 2017-04-02 01:32:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 280ms (Views: 267.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/edited_logo_2.jpg" for 10.0.2.2 at 2017-04-02 01:32:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as JPEG
+  Parameters: {"genre_id"=>"edited_logo_2"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Genre with 'id'=edited_logo_2):
+  
+app/controllers/genre_controller.rb:6:in `snippet'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.4ms)
+Started GET "/genres/edited_logo_2.jpg" for 10.0.2.2 at 2017-04-02 01:32:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as JPEG
+  Parameters: {"genre_id"=>"edited_logo_2"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Genre with 'id'=edited_logo_2):
+  
+app/controllers/genre_controller.rb:6:in `snippet'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.7ms)
+Started GET "/genres/" for 10.0.2.2 at 2017-04-02 01:32:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 301ms (Views: 287.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/1" for 10.0.2.2 at 2017-04-02 01:33:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"1"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (0.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 1)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.2ms)
+  Rendered shared/_flash.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 312ms (Views: 291.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/genres/" for 10.0.2.2 at 2017-04-02 01:33:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 293ms (Views: 278.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:34:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.5ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (1.9ms)
+Completed 200 OK in 529ms (Views: 489.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/genres/3/stories/2" for 10.0.2.2 at 2017-04-02 01:35:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#show as HTML
+  Parameters: {"genre_id"=>"3", "story_id"=>"2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.8ms)[0m  [1m[34mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering story/show.html.erb within layouts/application
+  Rendered story/show.html.erb within layouts/application (1.8ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 398ms (Views: 367.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:35:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 452ms (Views: 418.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:42:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.5ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 338ms (Views: 317.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:42:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.2ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 308ms (Views: 293.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:43:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.1ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 372ms (Views: 349.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:43:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (2.3ms)
+  Rendered shared/_flash.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 371ms (Views: 343.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:44:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (1.3ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 4469ms (Views: 4453.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:45:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 4868ms (Views: 4850.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:46:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 4123ms (Views: 4107.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:47:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (1.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 1384ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "    float": expected ";", was ": none;"):
+     5:     <meta name="viewport" content="width=device-width">
+     6:     <%= csrf_meta_tags %>
+     7:     <%= favicon_link_tag 'favicon.ico' %>
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:     <script>
+    11:   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  
+app/assets/stylesheets/genres.scss:112
+app/assets/stylesheets/application.css.sass:20
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3699568043276213597_70264074920040'
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.9ms)
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:47:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (1.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 4258ms (Views: 4236.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:49:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 4905ms (Views: 4889.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:50:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 298ms (Views: 283.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:52:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 283ms (Views: 266.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:52:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 291ms (Views: 274.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:52:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 3646ms (Views: 3630.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:52:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 318ms (Views: 294.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:54:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 4320ms (Views: 4300.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:55:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.0ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 3976ms (Views: 3957.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:55:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (1.3ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 4914ms (Views: 4896.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:56:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.4ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 354ms (Views: 334.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/genres/3" for 10.0.2.2 at 2017-04-02 01:56:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"3"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStory Load (0.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 3)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 404ms (Views: 387.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/genres/" for 10.0.2.2 at 2017-04-02 01:57:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 281ms (Views: 266.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2017-04-02 01:57:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#logout as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-04-02 01:57:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.4ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 468ms (Views: 450.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-04-02 01:57:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 271ms (Views: 257.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-04-02 01:58:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.2ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 321ms (Views: 305.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2017-04-02 02:00:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"6fUd2pjY1ql/WQSOoXr9cu+6DZJHe/+3IyKftZh4tL3HyrpA/TPcI5Trd3ox+5xre4q/xHcnxCfezUSeoMS4lw==", "name"=>"Mick"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mick"], ["created_at", 2017-04-02 02:00:04 UTC], ["updated_at", 2017-04-02 02:00:04 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/genres
+Completed 302 Found in 36ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:00:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 280ms (Views: 262.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/1" for 10.0.2.2 at 2017-04-02 02:06:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"1"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStory Load (0.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 1)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 430ms (Views: 389.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:12:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.0ms)
+Completed 200 OK in 308ms (Views: 290.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:12:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:12:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 570ms (Views: 548.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:12:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:12:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 505ms (Views: 464.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:12:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:12:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (1.3ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 773ms (Views: 687.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:12:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:12:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 332ms (Views: 313.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:12:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:12:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 452ms (Views: 431.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-04-02 02:13:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#new as HTML
+Redirected to http://localhost:3000/genres
+Completed 302 Found in 21ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:13:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (3.9ms)
+  Rendered shared/_nav.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 2830ms (Views: 2816.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:13:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#info as HTML
+  Rendering genre/info.html.erb within layouts/application
+  Rendered genre/info.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (7.8ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 446ms (Views: 402.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:13:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#info as HTML
+  Rendering genre/info.html.erb within layouts/application
+  Rendered genre/info.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 288ms (Views: 274.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:14:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#info as HTML
+  Rendering genre/info.html.erb within layouts/application
+  Rendered genre/info.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 270ms (Views: 258.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:14:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#info as HTML
+  Rendering genre/info.html.erb within layouts/application
+  Rendered genre/info.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 344ms (Views: 332.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:15:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#info as HTML
+  Rendering genre/info.html.erb within layouts/application
+  Rendered genre/info.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 275ms (Views: 262.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:15:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#info as HTML
+  Rendering genre/info.html.erb within layouts/application
+  Rendered genre/info.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 291ms (Views: 275.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:16:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#info as HTML
+  Rendering genre/info.html.erb within layouts/application
+  Rendered genre/info.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 466ms (Views: 451.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-04-02 02:20:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#new as HTML
+Redirected to http://localhost:3000/genres
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:20:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 301ms (Views: 287.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:25:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 322ms (Views: 310.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 10.0.2.2 at 2017-04-02 02:25:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#logout as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-04-02 02:25:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 602ms (Views: 575.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2017-04-02 02:25:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"vDQkqdw7EOUjcoYo8PYCKc45W6qETkl3VKLskfU5fYYW+NwuB2915ni931UwC3EFfvmFgUMjeYNkHS7Bkd0YyA==", "name"=>"Mick"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mick"], ["created_at", 2017-04-02 02:25:07 UTC], ["updated_at", 2017-04-02 02:25:07 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/genres
+Completed 302 Found in 49ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:25:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 363ms (Views: 348.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:25:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#info as HTML
+  Rendering genre/info.html.erb within layouts/application
+  Rendered genre/info.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.4ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 416ms (Views: 397.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/info" for 10.0.2.2 at 2017-04-02 02:25:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#info as HTML
+  Rendering genre/info.html.erb within layouts/application
+  Rendered genre/info.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 298ms (Views: 284.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2017-04-02 02:25:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#index as HTML
+  Rendering genre/index.html.erb within layouts/application
+  Rendered genre/index.html.erb within layouts/application (0.8ms)
+  Rendered shared/_nav.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 410ms (Views: 390.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 02:25:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (1.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (1.9ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 497ms (Views: 386.7ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 02:26:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 276ms (Views: 259.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/genres/2/stories/4" for 10.0.2.2 at 2017-04-02 02:26:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StoryController#show as HTML
+  Parameters: {"genre_id"=>"2", "story_id"=>"4"}
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (0.5ms)[0m  [1m[34mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering story/show.html.erb within layouts/application
+  Rendered story/show.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 379ms (Views: 354.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/genres/2" for 10.0.2.2 at 2017-04-02 02:26:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenreController#snippet as HTML
+  Parameters: {"genre_id"=>"2"}
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStory Load (2.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE (genre_id = 2)[0m
+  Rendering genre/snippet.html.erb within layouts/application
+  Rendered genre/snippet.html.erb within layouts/application (0.9ms)
+  Rendered shared/_nav.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 641ms (Views: 587.9ms | ActiveRecord: 3.2ms)
+
+
