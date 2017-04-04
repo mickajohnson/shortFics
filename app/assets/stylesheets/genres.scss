@@ -218,3 +218,15 @@ background-color:#FFFFFF;
     margin-bottom: 2px;
   }
 }
+
+@media screen and (max-width: 774px){
+  .nav li{
+    margin-top: 0px;
+  }
+}
+.nav li{
+  margin-top: 10px;
+}
+.navbar-nav{
+  margin-top: -5px;
+}
