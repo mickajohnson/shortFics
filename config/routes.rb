@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'genres/:genre_id/stories/:story_id' => 'story#show'
   get 'logout' => 'user#logout'
   get 'info' => 'genre#info'
+  get 'settings' => 'user#settings'
   get 'stories/new' => 'story#new'
   post 'stories' => 'story#create'
   get '*path' => redirect('/genres')

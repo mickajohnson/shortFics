@@ -23,5 +23,8 @@ class UserController < ApplicationController
     redirect_to '/'
   end
 
+  def settings
+    @user = User.find(session[:id])
+  end
 
 end

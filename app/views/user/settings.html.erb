@@ -1,0 +1,58 @@
+<h1 class="text-center">Settings</h1>
+<h3 class="text-center">Preferences</h3>
+<form class="" action="index.html" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <div class="form-group">
+    <legend>Invert colors?</legend>
+    <fieldset class="form-group">
+      <div class="form-check">
+        <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="size" value="12" checked>
+        12
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="size" value="16">
+        16
+        </label>
+      </div>
+      <div class="form-check disabled">
+        <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="size" value="18">
+        18
+        </label>
+      </div>
+      <div class="form-check disabled">
+        <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="size" value="32">
+        32
+        </label>
+      </div>
+      <div class="form-check disabled">
+        <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="size" value="64">
+        64
+        </label>
+      </div>
+    </fieldset>
+  </div>
+  <div class="form-group">
+    <legend>Invert colors?</legend>
+    <fieldset class="form-group">
+    <div class="form-check">
+      <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="color" value="false" checked>
+      No
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="color" value="true">
+      Yes
+      </label>
+    </div>
+  </div>
+</fieldset>
+  <input class="btn btn-success" type="submit" value="Submit">
+</form>
