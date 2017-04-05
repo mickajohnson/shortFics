@@ -27,4 +27,11 @@ class UserController < ApplicationController
     @user = User.find(session[:id])
   end
 
+  def update_settings
+    user = User.find(session[:id])
+    user.pref_color_inversion = params[:color]
+    user.pref_text_size = params[:text]
+    user.save
+  end
+
 end
